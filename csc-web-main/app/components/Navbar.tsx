@@ -1,0 +1,103 @@
+'use client';
+
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+
+const Navbar = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [activeLink, setActiveLink] = useState('#home');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleLinkClick = (href: string) => {
+    setActiveLink(href);
+    setIsMobileMenuOpen(false);
+  };
+
+  return (
+    <nav className={`navbar glass ${isScrolled ? 'scrolled' : ''}`}>
+      <div className="container nav-content">
+        <Link href="/" className="logo" onClick={() => handleLinkClick('#home')} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <div style={{ display: 'flex', alignItems: 'flex-end', gap: '3px', height: '24px' }}>
+            <div style={{ width: '4px', height: '14px', background: '#3b82f6', borderRadius: '1px' }}></div>
+            <div style={{ width: '4px', height: '20px', background: '#60a5fa', borderRadius: '1px' }}></div>
+            <div style={{ width: '4px', height: '24px', background: '#93c5fd', borderRadius: '1px' }}></div>
+          </div>
+          <span style={{ fontSize: '0.9rem', fontWeight: '700', letterSpacing: '0.5px', color: 'white', lineHeight: '1.2' }}>
+            CORRECT STEPS
+          </span>
+        </Link>
+
+        {/* Desktop Links */}
+        <ul className="nav-links desktop-only">
+          <li>
+            <Link
+              href="#home"
+              className={activeLink === '#home' ? 'active' : ''}
+              onClick={() => handleLinkClick('#home')}
+            >HOME</Link>
+          </li>
+          <li>
+            <Link
+              href="#solutions"
+              className={activeLink === '#solutions' ? 'active' : ''}
+              onClick={() => handleLinkClick('#solutions')}
+            >SOLUTIONS</Link>
+          </li>
+          <li>
+            <Link
+              href="#tech-stack"
+              className={activeLink === '#tech-stack' ? 'active' : ''}
+              onClick={() => handleLinkClick('#tech-stack')}
+            >TECH STACK</Link>
+          </li>
+          <li>
+            <Link
+              href="#contact"
+              className={activeLink === '#contact' ? 'active' : ''}
+              onClick={() => handleLinkClick('#contact')}
+            >CONTACT</Link>
+          </li>
+          <li>
+            <Link
+              href="#consult"
+              className={`btn-secondary nav-btn ${activeLink === '#consult' ? 'active' : ''}`}
+              onClick={() => handleLinkClick('#consult')}
+            >CONSULT AN EXPERT</Link>
+          </li>
+        </ul>
+
+        {/* Mobile menu button */}
+        <button
+          className="mobile-menu-btn"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          <svg width="28" height="20" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="24" height="2" fill="currentColor" />
+            <rect y="7" width="24" height="2" fill="currentColor" />
+            <rect y="14" width="24" height="2" fill="currentColor" />
+          </svg>
+        </button>
+
+        {/* Mobile Menu Overlay */}
+        <ul className={`nav-links mobile-menu ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
+          <li><Link href="#home" className={activeLink === '#home' ? 'active' : ''} onClick={() => handleLinkClick('#home')}>HOME</Link></li>
+          <li><Link href="#solutions" className={activeLink === '#solutions' ? 'active' : ''} onClick={() => handleLinkClick('#solutions')}>SOLUTIONS</Link></li>
+          <li><Link href="#tech-stack" className={activeLink === '#tech-stack' ? 'active' : ''} onClick={() => handleLinkClick('#tech-stack')}>TECH STACK</Link></li>
+          <li><Link href="#contact" className={activeLink === '#contact' ? 'active' : ''} onClick={() => handleLinkClick('#contact')}>CONTACT</Link></li>
+          <li><Link href="#consult" className={`btn-secondary nav-btn ${activeLink === '#consult' ? 'active' : ''}`} onClick={() => handleLinkClick('#consult')}>CONSULT AN EXPERT</Link></li>
+        </ul>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;

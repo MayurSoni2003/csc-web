@@ -21,15 +21,15 @@ export default function Page() {
       <div className="shade-left"></div>
       <div className="shade-center"></div>
       <div className="shade-right"></div>
-      
+
       <Navbar />
 
-      <header className="hero">
+      <header className="hero fade-in">
         <div className="hero-overlay"></div>
-        <Image 
-          src={HERO_IMG} 
-          alt="Aerospace Engineering" 
-          className="hero-bg" 
+        <Image
+          src={HERO_IMG}
+          alt="Aerospace Engineering"
+          className="hero-bg"
           fill
           priority
           style={{ objectFit: 'cover' }}
@@ -47,7 +47,7 @@ export default function Page() {
         </div>
       </header>
 
-      <section className="services-grid-wrapper container">
+      <section className="services-grid-wrapper container reveal-up">
         <div className="services-header">
           <h2>Core Automation & Robotic Solutions</h2>
         </div>
@@ -79,7 +79,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="bottom-sections container">
+      <section className="bottom-sections container reveal-up">
         <div className="specializations">
           <h3><span className="accent">▶</span> SPECIALIZATIONS</h3>
           <div className="spec-grid">
@@ -106,7 +106,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="stack-impact-section container">
+      <section className="stack-impact-section container reveal-up">
         <div className="tech-stack">
           <h3><span className="accent">▶</span> TECH STACK</h3>
           <div className="stack-timeline">
@@ -166,7 +166,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="technical-issues-section container border-top border-bottom">
+      <section className="technical-issues-section container border-top border-bottom reveal-up">
         <div className="tech-issues-content">
           <h2>SOLVE YOUR TECHNICAL ISSUES</h2>
           <p className="subtitle">Our approach combines fundamental physics with advanced robotics to provide the correct steps for industrial automation.</p>
@@ -181,40 +181,42 @@ export default function Page() {
         </div>
       </section>
 
-      <footer className="main-footer container">
-        <div className="footer-top">
-          <div className="footer-brand">
-            <h3><span className="accent">📚</span> THE CORRECT STEPS</h3>
-            <p>SPECIALIZED IN PROBLEM-SOLVING ROBOTICS AND AUTOMATION FOR INDUSTRIAL AND DEFENSE SECTORS.</p>
+      <footer className="main-footer">
+        <div className="container">
+          <div className="footer-top">
+            <div className="footer-brand">
+              <h3><span className="accent">📚</span> THE CORRECT STEPS</h3>
+              <p>SPECIALIZED IN PROBLEM-SOLVING ROBOTICS AND AUTOMATION FOR INDUSTRIAL AND DEFENSE SECTORS.</p>
+            </div>
+            <div className="footer-links">
+              <h4>SOLUTIONS</h4>
+              <ul>
+                <li><Link href="#">CUSTOM ROBOTICS</Link></li>
+                <li><Link href="#">INDUSTRIAL AUTOMATION</Link></li>
+                <li><Link href="#">CRASH & IMPACT SIMULATION</Link></li>
+                <li><Link href="#">FEM & CAD MODELLING</Link></li>
+              </ul>
+            </div>
+            <div className="footer-links">
+              <h4>TECHNOLOGIES</h4>
+              <ul>
+                <li><Link href="#">BIOMECHANICS</Link></li>
+                <li><Link href="#">FLEXURE JOINTS</Link></li>
+                <li><Link href="#">ORIGAMI MICRO-ROBOTICS</Link></li>
+              </ul>
+            </div>
+            <div className="footer-links">
+              <h4>LEGAL</h4>
+              <ul>
+                <li><Link href="#">PRIVACY POLICY</Link></li>
+                <li><Link href="#">TERMS OF SERVICE</Link></li>
+              </ul>
+            </div>
           </div>
-          <div className="footer-links">
-            <h4>SOLUTIONS</h4>
-            <ul>
-              <li><Link href="#">CUSTOM ROBOTICS</Link></li>
-              <li><Link href="#">INDUSTRIAL AUTOMATION</Link></li>
-              <li><Link href="#">CRASH & IMPACT SIMULATION</Link></li>
-              <li><Link href="#">FEM & CAD MODELLING</Link></li>
-            </ul>
+          <div className="footer-bottom border-top">
+            <p>© 2026 THE CORRECT STEPS. ALL RIGHTS RESERVED.</p>
+            <p><Link href="https://thecorrectsteps.com" target="_blank">THECORRECTSTEPS.COM ↗</Link></p>
           </div>
-          <div className="footer-links">
-            <h4>TECHNOLOGIES</h4>
-            <ul>
-              <li><Link href="#">BIOMECHANICS</Link></li>
-              <li><Link href="#">FLEXURE JOINTS</Link></li>
-              <li><Link href="#">ORIGAMI MICRO-ROBOTICS</Link></li>
-            </ul>
-          </div>
-          <div className="footer-links">
-            <h4>LEGAL</h4>
-            <ul>
-              <li><Link href="#">PRIVACY POLICY</Link></li>
-              <li><Link href="#">TERMS OF SERVICE</Link></li>
-            </ul>
-          </div>
-        </div>
-        <div className="footer-bottom border-top">
-          <p>© 2026 THE CORRECT STEPS. ALL RIGHTS RESERVED.</p>
-          <p><Link href="https://thecorrectsteps.com" target="_blank">THECORRECTSTEPS.COM ↗</Link></p>
         </div>
       </footer>
     </div>
