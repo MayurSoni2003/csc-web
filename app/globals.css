@@ -1,15 +1,15 @@
 :root {
-  --bg-color: #0d1117;
-  --nav-bg: rgba(0, 45, 75, 0.85);
-  --card-bg: #161b22;
-  --primary-accent: #00bcd4;
+  --bg-color: #ffffff;
+  --nav-bg: rgba(0, 45, 75, 0.9); /* Slightly more opaque blue for light theme */
+  --card-bg: #f9fafb;
+  --primary-accent: #008ba3; /* Slightly darker cyan for legibility on white */
   --secondary-accent: #00bcd4;
-  --text-high: #ffffff;
-  --text-muted: rgba(139, 148, 158, 0.9);
-  --border-color: rgba(255, 255, 255, 0.08);
+  --text-high: #111827;
+  --text-muted: #4b5563;
+  --border-color: rgba(0, 0, 0, 0.1);
   --font-primary: 'Inter', sans-serif;
-  --premium-gradient: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
-  --glow-cyan: 0 0 15px rgba(0, 188, 212, 0.4);
+  --premium-gradient: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+  --glow-cyan: 0 4px 15px rgba(0, 139, 163, 0.2);
 }
 
 @keyframes revealUp {
@@ -87,18 +87,18 @@ button {
 
 /* Glassmorphism effects */
 .glass {
-  background: rgba(22, 27, 34, 0.6);
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .glass:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 188, 212, 0.1), 0 0 0 1px rgba(0, 188, 212, 0.2);
-  background: rgba(22, 27, 34, 0.7);
+  box-shadow: 0 20px 40px rgba(0, 139, 163, 0.1), 0 0 0 1px rgba(0, 139, 163, 0.1);
+  background: rgba(255, 255, 255, 0.9);
 }
 
 /* Navbar Enhancements */
@@ -215,12 +215,12 @@ button {
   left: -200px;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 139, 163, 0.05) 0%, transparent 70%);
   filter: blur(100px);
   z-index: 1; /* Increased to ensure visibility over background layers */
   pointer-events: none;
   animation: smokeDrift 20s infinite alternate ease-in-out;
-  mix-blend-mode: screen;
+  mix-blend-mode: multiply; /* Better for light theme */
 }
 
 .shade-center {
@@ -230,12 +230,12 @@ button {
   transform: translate(-50%, -50%);
   width: 900px;
   height: 900px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 139, 163, 0.03) 0%, transparent 70%);
   filter: blur(140px);
   z-index: 1;
   pointer-events: none;
   animation: smokeDrift 25s infinite alternate-reverse ease-in-out;
-  mix-blend-mode: screen;
+  mix-blend-mode: multiply;
 }
 
 .shade-right {
@@ -244,18 +244,18 @@ button {
   right: -200px;
   width: 700px;
   height: 700px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.35) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 139, 163, 0.04) 0%, transparent 70%);
   filter: blur(120px);
   z-index: 1;
   pointer-events: none;
   animation: smokeDrift 22s infinite alternate ease-in-out;
-  mix-blend-mode: screen;
+  mix-blend-mode: multiply;
 }
 
 @keyframes smokeDrift {
-  0% { transform: translate(0, 0) scale(1); opacity: 0.7; }
-  50% { transform: translate(40px, -30px) scale(1.1); opacity: 1; }
-  100% { transform: translate(-20px, 20px) scale(0.9); opacity: 0.8; }
+  0% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+  50% { transform: translate(40px, -30px) scale(1.1); opacity: 0.5; }
+  100% { transform: translate(-20px, 20px) scale(0.9); opacity: 0.4; }
 }
 
 /* Navbar */
@@ -303,7 +303,7 @@ button {
 .nav-links a {
   font-size: 0.9rem;
   font-weight: 500;
-  color: var(--text-high);
+  color: #ffffff;
   letter-spacing: 0.2px;
 }
 
@@ -358,7 +358,7 @@ button {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(29, 39, 53, 0.9) 0%, rgba(29, 39, 53, 0) 60%);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.1) 60%);
   z-index: 0;
 }
 
@@ -373,7 +373,7 @@ button {
   line-height: 1;
   margin-bottom: 1.5rem;
   max-width: 800px;
-  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.7) 100%);
+  background: linear-gradient(180deg, #111827 0%, #374151 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -670,12 +670,10 @@ h3 {
   display: flex;
   flex-direction: column;
   border-radius: 8px;
-  /* Slightly more rounded as per reference */
   overflow: hidden;
-  background: #1c2532;
-  /* Match the dark card background in reference */
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  /* Subtle border */
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
 }
 
 .img-placeholder {
@@ -773,19 +771,19 @@ h3 {
 }
 
 .btn-outline-primary:hover {
-  background: rgba(255, 165, 0, 0.1);
+  background: rgba(0, 139, 163, 0.1);
 }
 
 .btn-solid-muted {
-  background: hsla(215, 20%, 30%, 0.8);
-  border: 1px solid transparent;
+  background: #f3f4f6;
+  border: 1px solid rgba(0, 0, 0, 0.05);
   color: var(--text-high);
   padding: 0.8rem 1.5rem;
   border-radius: 4px;
 }
 
 .btn-solid-muted:hover {
-  background: hsla(215, 20%, 40%, 0.8);
+  background: #e5e7eb;
 }
 
 .process-overview {
@@ -815,7 +813,7 @@ h3 {
 .main-footer {
   background: var(--nav-bg);
   padding: 4rem 0 2rem;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.7); /* Lighter text for the blue footer */
 }
 
 .footer-top {
@@ -840,8 +838,8 @@ h3 {
   gap: 1.5rem;
   padding: 1.25rem;
   border-radius: 8px;
-  background: rgba(22, 27, 34, 0.4);
-  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
 }
 
@@ -905,7 +903,7 @@ h3 {
 }
 
 .footer-bottom a {
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .footer-bottom a:hover {
@@ -985,14 +983,14 @@ h3 {
     width: 100%;
     flex-direction: column;
     align-items: center;
-    background: var(--bg-color);
+    background: #ffffff;
     position: absolute;
     top: 100%;
     left: 0;
     padding: 2rem 0;
     gap: 1.5rem;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-    border-top: 1px solid var(--border-color);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
   }
 
   .nav-links.mobile-open {
@@ -1004,14 +1002,13 @@ h3 {
     width: 100%;
     text-align: center;
     padding: 0.5rem;
+    color: var(--text-high);
   }
 
   .hero {
     margin-top: 0;
-    /* Reset since navbar is absolute */
     height: auto;
     padding: 6rem 0 4rem;
-    /* Add padding to clear navbar */
   }
 
   .hero-text {
@@ -1023,7 +1020,7 @@ h3 {
   }
 
   .hero-overlay {
-    background: linear-gradient(0deg, rgba(29, 39, 53, 0.9) 0%, rgba(29, 39, 53, 0.4) 100%);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.6) 100%);
   }
 
   .services-grid {
