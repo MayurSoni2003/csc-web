@@ -107,7 +107,7 @@ button {
   background: var(--nav-bg);
   padding: 1.25rem 0;
   transition: all 0.3s ease;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: none; /* Removed border that could look like a black line */
   box-shadow: none;
   transform: none !important;
 }
@@ -213,37 +213,49 @@ button {
   position: fixed;
   top: 10%;
   left: -200px;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(255, 180, 0, 0.15) 0%, transparent 70%);
-  filter: blur(80px);
-  z-index: -1;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+  filter: blur(100px);
+  z-index: 1; /* Increased to ensure visibility over background layers */
   pointer-events: none;
+  animation: smokeDrift 20s infinite alternate ease-in-out;
+  mix-blend-mode: screen;
 }
 
 .shade-center {
   position: fixed;
-  top: 40%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 800px;
-  height: 800px;
-  background: radial-gradient(circle, rgba(255, 180, 0, 0.08) 0%, transparent 70%);
-  filter: blur(120px);
-  z-index: -1;
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+  filter: blur(140px);
+  z-index: 1;
   pointer-events: none;
+  animation: smokeDrift 25s infinite alternate-reverse ease-in-out;
+  mix-blend-mode: screen;
 }
 
 .shade-right {
   position: fixed;
   bottom: 10%;
   right: -200px;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(255, 180, 0, 0.12) 0%, transparent 70%);
-  filter: blur(100px);
-  z-index: -1;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.35) 0%, transparent 70%);
+  filter: blur(120px);
+  z-index: 1;
   pointer-events: none;
+  animation: smokeDrift 22s infinite alternate ease-in-out;
+  mix-blend-mode: screen;
+}
+
+@keyframes smokeDrift {
+  0% { transform: translate(0, 0) scale(1); opacity: 0.7; }
+  50% { transform: translate(40px, -30px) scale(1.1); opacity: 1; }
+  100% { transform: translate(-20px, 20px) scale(0.9); opacity: 0.8; }
 }
 
 /* Navbar */
@@ -325,8 +337,7 @@ button {
   position: relative;
   height: calc(85vh - 80px);
   /* Adjust height to account for margin */
-  margin-top: 80px;
-  /* Push below navbar (approx height of navbar + padding) */
+  margin-top: 72px; /* Adjusted to exactly match navbar height to prevent black gap */
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -353,7 +364,7 @@ button {
 
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 10;
   width: 100%;
 }
 
