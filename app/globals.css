@@ -1,7 +1,8 @@
 :root {
   --bg-color: #ffffff;
-  --nav-bg: rgba(0, 45, 75, 0.9);
-  /* Slightly more opaque blue for light theme */
+  /* --nav-bg: rgba(0, 45, 75, 1); */
+  --nav-bg: #06334f;
+  /* Fully opaque blue for light theme */
   --card-bg: #f9fafb;
   --primary-accent: #008ba3;
   /* Slightly darker cyan for legibility on white */
@@ -75,7 +76,7 @@ button {
   cursor: pointer;
   border: none;
   transition: all 0.3s ease;
-  font-family: var(--font-main);
+  font-family: var(--font-primary);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -123,7 +124,7 @@ button {
 
 .navbar.scrolled {
   padding: 0.75rem 0;
-  background: rgba(0, 45, 75, 0.95);
+  background: var(--nav-bg);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
 }
 
@@ -351,10 +352,9 @@ button {
 /* Hero Section */
 .hero {
   position: relative;
-  height: calc(85vh - 80px);
-  /* Adjust height to account for margin */
-  margin-top: 72px;
-  /* Adjusted to exactly match navbar height to prevent black gap */
+  min-height: 100vh;
+  margin-top: 0;
+  padding-top: 72px;
   display: flex;
   align-items: center;
   overflow: hidden;

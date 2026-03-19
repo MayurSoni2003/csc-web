@@ -31,7 +31,7 @@ const Navbar = () => {
             <div style={{ width: '4px', height: '24px', background: '#93c5fd', borderRadius: '1px' }}></div>
           </div>
           <span style={{ fontSize: '0.9rem', fontWeight: '700', letterSpacing: '0.5px', color: 'white', lineHeight: '1.2' }}>
-            CORRECT STEPS
+            THE CORRECT STEPS
           </span>
         </Link>
 

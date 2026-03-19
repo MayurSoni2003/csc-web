@@ -10,8 +10,12 @@ const LIGHT_IMG = '/assets/light.png';
 const THERMAL_IMG = '/assets/thermal.png';
 const VIBE_IMG = '/assets/vibe.png';
 
+const DEFENSE_IMG = '/assets/def.png';
+const INDUSTRIAL_IMG = '/assets/ind.png';
+const MECHANICAL_IMG = '/assets/mech.png';
+
 export const metadata = {
-  title: 'Engineering Answers | The Correct Steps',
+  title: 'The Correct Steps',
   description: 'Problem solving robotics and automation solutions for industrial and defense issues.',
 };
 
@@ -134,7 +138,7 @@ export default function Page() {
           <div className="impact-cards">
             <div className="impact-card glass">
               <div className="img-placeholder">
-                <Image src={THERMAL_IMG} alt="Defense Infrastructure" width={300} height={150} style={{ width: '100%', height: 'auto' }} />
+                <Image src={DEFENSE_IMG} alt="Defense Infrastructure" width={300} height={150} style={{ width: '100%', height: 'auto' }} />
               </div>
               <div className="impact-content">
                 <h4>DEFENSE INFRASTRUCTURE</h4>
@@ -144,7 +148,7 @@ export default function Page() {
             </div>
             <div className="impact-card glass">
               <div className="img-placeholder">
-                <Image src={CFD_IMG} alt="Industrial Automation" width={300} height={150} style={{ width: '100%', height: 'auto' }} />
+                <Image src={INDUSTRIAL_IMG} alt="Industrial Automation" width={300} height={150} style={{ width: '100%', height: 'auto' }} />
               </div>
               <div className="impact-content">
                 <h4>INDUSTRIAL AUTOMATION</h4>
@@ -154,7 +158,7 @@ export default function Page() {
             </div>
             <div className="impact-card glass">
               <div className="img-placeholder">
-                <Image src={VIBE_IMG} alt="Mechanical Specs" width={300} height={150} style={{ width: '100%', height: 'auto' }} />
+                <Image src={MECHANICAL_IMG} alt="Mechanical Specs" width={300} height={150} style={{ width: '100%', height: 'auto' }} />
               </div>
               <div className="impact-content">
                 <h4>MECHANICAL SPECS</h4>
