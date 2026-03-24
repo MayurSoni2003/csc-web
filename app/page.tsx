@@ -101,7 +101,7 @@ export default function Page() {
       <Navbar />
 
       {/* ── Hero ──────────────────────────────────────────── */}
-      <header className="hero">
+      <header className="hero fade-in">
         <div className="hero-overlay"></div>
         <Image
           src={HERO_IMG}
