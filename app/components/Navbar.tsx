@@ -25,12 +25,12 @@ const Navbar = () => {
     <nav className={`navbar glass ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container nav-content">
         <Link href="/" className="logo" onClick={() => handleLinkClick('#home')} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <div style={{ display: 'flex', alignItems: 'flex-end', gap: '3px', height: '24px' }}>
-            <div style={{ width: '4px', height: '14px', background: '#3b82f6', borderRadius: '1px' }}></div>
-            <div style={{ width: '4px', height: '20px', background: '#60a5fa', borderRadius: '1px' }}></div>
-            <div style={{ width: '4px', height: '24px', background: '#93c5fd', borderRadius: '1px' }}></div>
-          </div>
-          <span style={{ fontSize: '0.9rem', fontWeight: '700', letterSpacing: '0.5px', color: 'white', lineHeight: '1.2' }}>
+          <img
+            src="/assets/csc_logo.png"
+            alt="CSC Logo"
+            style={{ height: '64px', width: 'auto', objectFit: 'contain', display: 'block', margin: '-12px 0' }}
+          />
+          <span style={{ fontSize: '1.1rem', fontWeight: '700', letterSpacing: '0.5px', color: 'white', lineHeight: '1.2' }}>
             THE CORRECT STEPS
           </span>
         </Link>
