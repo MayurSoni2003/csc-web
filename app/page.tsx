@@ -1,7 +1,19 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Navbar from './components/Navbar';
+import {
+  FadeInUp,
+  ScaleIn,
+  SlideInLeft,
+  SlideInRight,
+  StaggerContainer,
+  StaggerItem,
+  HeroTextReveal,
+  HeroItem,
+} from './components/MotionWrappers';
 
 // Using local asset paths
 const HERO_IMG = '/assets/hero.png';
@@ -79,12 +91,6 @@ const SPECIALIZATIONS = [
   },
 ];
 
-
-export const metadata = {
-  title: 'The Correct Steps',
-  description: 'Problem solving robotics and automation solutions for industrial and defense issues.',
-};
-
 export default function Page() {
   return (
     <div className="app">
@@ -94,7 +100,8 @@ export default function Page() {
 
       <Navbar />
 
-      <header className="hero fade-in">
+      {/* ── Hero ──────────────────────────────────────────── */}
+      <header className="hero">
         <div className="hero-overlay"></div>
         <Image
           src={HERO_IMG}
@@ -105,159 +112,175 @@ export default function Page() {
           style={{ objectFit: 'cover' }}
         />
         <div className="container hero-content">
-          <div className="hero-text">
-            <h2>Problem Solving Robotics & Automation</h2>
-            <h1>Engineering Answers for Industrial & Defense Issues</h1>
-            <p className="subtitle">We provide mission-critical robotics and automation solutions through advanced CAD, Crash & Impact dynamics, and biomechanical principles.</p>
-            <div className="hero-btns">
-              <button className="btn-primary">Start Project</button>
-              <button className="btn-secondary">Our Methodology</button>
-            </div>
-          </div>
+          <HeroTextReveal className="hero-text">
+            <HeroItem>
+              <h2>Problem Solving Robotics &amp; Automation</h2>
+            </HeroItem>
+            <HeroItem>
+              <h1>Engineering Answers for Industrial &amp; Defense Issues</h1>
+            </HeroItem>
+            <HeroItem>
+              <p className="subtitle">We provide mission-critical robotics and automation solutions through advanced CAD, Crash &amp; Impact dynamics, and biomechanical principles.</p>
+            </HeroItem>
+            <HeroItem>
+              <div className="hero-btns">
+                <button className="btn-primary">Start Project</button>
+                <button className="btn-secondary">Our Methodology</button>
+              </div>
+            </HeroItem>
+          </HeroTextReveal>
         </div>
       </header>
 
-      <section className="services-grid-wrapper container reveal-up">
-        <div className="services-header">
-          <h2>Core Automation & Robotic Solutions</h2>
-        </div>
-        <div className="services-grid">
-          <div className="service-card">
+      {/* ── Services Grid ──────────────────────────────────── */}
+      <section className="services-grid-wrapper container">
+        <FadeInUp className="services-header">
+          <h2>Core Automation &amp; Robotic Solutions</h2>
+        </FadeInUp>
+        <StaggerContainer className="services-grid">
+          <StaggerItem className="service-card">
             <div className="img-container">
               <Image src={CFD_IMG} alt="Robotics" width={400} height={300} style={{ width: '100%', height: 'auto' }} />
             </div>
             <p>PROBLEM-SOLVING ROBOTICS</p>
-          </div>
-          <div className="service-card">
+          </StaggerItem>
+          <StaggerItem className="service-card">
             <div className="img-container">
               <Image src={LIGHT_IMG} alt="Automation" width={400} height={300} style={{ width: '100%', height: 'auto' }} />
             </div>
             <p>AUTOMATION SOLUTIONS</p>
-          </div>
-          <div className="service-card">
+          </StaggerItem>
+          <StaggerItem className="service-card">
             <div className="img-container">
               <Image src={THERMAL_IMG} alt="FEM" width={400} height={300} style={{ width: '100%', height: 'auto' }} />
             </div>
-            <p>FEM & STRUCTURAL ANALYSIS</p>
-          </div>
-          <div className="service-card">
+            <p>FEM &amp; STRUCTURAL ANALYSIS</p>
+          </StaggerItem>
+          <StaggerItem className="service-card">
             <div className="img-container">
               <Image src={VIBE_IMG} alt="Crash" width={400} height={300} style={{ width: '100%', height: 'auto' }} />
             </div>
-            <p>CRASH & IMPACT SIMULATION</p>
-          </div>
-        </div>
+            <p>CRASH &amp; IMPACT SIMULATION</p>
+          </StaggerItem>
+        </StaggerContainer>
       </section>
 
-      <section className="bottom-sections container reveal-up">
-        <div className="specializations">
-      <h3>
-        <svg className="spec-heading-icon" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M8 5v14l11-7z" />
-        </svg>
-        Specializations
-      </h3>
- 
-      <div className="spec-grid">
-        {SPECIALIZATIONS.map((item) => (
-          <div key={item.title} className="spec-item">
-            <div className="spec-icon-circle">
-              {item.icon}
-            </div>
-            <p>{item.title}</p>
-          </div>
-        ))}
-      </div>
-    </div>
+      {/* ── Specializations + Recent Apps ────────────────── */}
+      <section className="bottom-sections container">
+        <SlideInLeft className="specializations">
+          <h3>
+            <svg className="spec-heading-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+            Specializations
+          </h3>
+          <StaggerContainer className="spec-grid">
+            {SPECIALIZATIONS.map((item) => (
+              <StaggerItem key={item.title} className="spec-item">
+                <div className="spec-icon-circle">
+                  {item.icon}
+                </div>
+                <p>{item.title}</p>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </SlideInLeft>
 
-        <div className="recent-apps">
+        <SlideInRight className="recent-apps">
           <h3><span className="accent">▶</span> RECENT APPLICATIONS</h3>
-          <div className="app-grid">
-            <div className="app-card glass">
+          <StaggerContainer className="app-grid">
+            <StaggerItem className="app-card glass">
               <Image src={THERMAL_IMG} alt="App 1" width={150} height={100} style={{ width: '100%', height: 'auto' }} />
-            </div>
-            <div className="app-card glass">
+            </StaggerItem>
+            <StaggerItem className="app-card glass">
               <Image src={CFD_IMG} alt="App 2" width={150} height={100} style={{ width: '100%', height: 'auto' }} />
-            </div>
-            <div className="app-card glass">
+            </StaggerItem>
+            <StaggerItem className="app-card glass">
               <Image src={VIBE_IMG} alt="App 3" width={150} height={100} style={{ width: '100%', height: 'auto' }} />
-            </div>
-          </div>
+            </StaggerItem>
+          </StaggerContainer>
           <button className="btn-primary learn-more">LEARN MORE</button>
-        </div>
+        </SlideInRight>
       </section>
 
-      <section className="stack-impact-section container reveal-up">
-        <div className="tech-stack">
-        <h3><span className="accent">▶</span> Tech Stack</h3>
+      {/* ── Tech Stack + Engineering Impact ──────────────── */}
+      <section className="stack-impact-section container">
+        <SlideInLeft className="tech-stack">
+          <h3><span className="accent">▶</span> Tech Stack</h3>
+          <StaggerContainer className="stack-timeline">
+            {TECH_STACK.map((item) => (
+              <StaggerItem key={item.title} className="stack-item">
+                <div className="stack-icon-circle">
+                  {item.icon}
+                </div>
+                <p>{item.title}</p>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </SlideInLeft>
 
-        <div className="stack-timeline">
-          {/* Decorative connector line is handled via .stack-timeline::before in CSS */}
-          {TECH_STACK.map((item) => (
-            <div key={item.title} className="stack-item">
-              <div className="stack-icon-circle">
-                {item.icon}
-              </div>
-              <p>{item.title}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-        <div className="engineering-impact">
+        <SlideInRight className="engineering-impact">
           <h3><span className="accent">▶</span> ENGINEERING FOR IMPACT</h3>
-          <div className="impact-cards">
-            <div className="impact-card glass">
-              <div className="img-placeholder">
-                <Image src={DEFENSE_IMG} alt="Defense Infrastructure" width={300} height={150} style={{ width: '100%', height: 'auto' }} />
+          <StaggerContainer className="impact-cards">
+            <StaggerItem>
+              <div className="impact-card glass">
+                <div className="img-placeholder">
+                  <Image src={DEFENSE_IMG} alt="Defense Infrastructure" width={300} height={150} style={{ width: '100%', height: 'auto' }} />
+                </div>
+                <div className="impact-content">
+                  <h4>DEFENSE INFRASTRUCTURE</h4>
+                  <p>Validating structural integrity against crash scenarios.</p>
+                  <button className="btn-primary learn-more-btn">LEARN MORE</button>
+                </div>
               </div>
-              <div className="impact-content">
-                <h4>DEFENSE INFRASTRUCTURE</h4>
-                <p>Validating structural integrity against crash scenarios.</p>
-                <button className="btn-primary learn-more-btn">LEARN MORE</button>
+            </StaggerItem>
+            <StaggerItem>
+              <div className="impact-card glass">
+                <div className="img-placeholder">
+                  <Image src={INDUSTRIAL_IMG} alt="Industrial Automation" width={300} height={150} style={{ width: '100%', height: 'auto' }} />
+                </div>
+                <div className="impact-content">
+                  <h4>INDUSTRIAL AUTOMATION</h4>
+                  <p>Custom end effectors to solve throughput issues.</p>
+                  <button className="btn-primary learn-more-btn">LEARN MORE</button>
+                </div>
               </div>
-            </div>
-            <div className="impact-card glass">
-              <div className="img-placeholder">
-                <Image src={INDUSTRIAL_IMG} alt="Industrial Automation" width={300} height={150} style={{ width: '100%', height: 'auto' }} />
+            </StaggerItem>
+            <StaggerItem>
+              <div className="impact-card glass">
+                <div className="img-placeholder">
+                  <Image src={MECHANICAL_IMG} alt="Mechanical Specs" width={300} height={150} style={{ width: '100%', height: 'auto' }} />
+                </div>
+                <div className="impact-content">
+                  <h4>MECHANICAL SPECS</h4>
+                  <p>Flexure joints for next-generation robotic...</p>
+                  <button className="btn-primary learn-more-btn">LEARN MORE</button>
+                </div>
               </div>
-              <div className="impact-content">
-                <h4>INDUSTRIAL AUTOMATION</h4>
-                <p>Custom end effectors to solve throughput issues.</p>
-                <button className="btn-primary learn-more-btn">LEARN MORE</button>
-              </div>
-            </div>
-            <div className="impact-card glass">
-              <div className="img-placeholder">
-                <Image src={MECHANICAL_IMG} alt="Mechanical Specs" width={300} height={150} style={{ width: '100%', height: 'auto' }} />
-              </div>
-              <div className="impact-content">
-                <h4>MECHANICAL SPECS</h4>
-                <p>Flexure joints for next-generation robotic...</p>
-                <button className="btn-primary learn-more-btn">LEARN MORE</button>
-              </div>
-            </div>
-          </div>
-        </div>
+            </StaggerItem>
+          </StaggerContainer>
+        </SlideInRight>
       </section>
 
-      <section className="technical-issues-section container border-top border-bottom reveal-up">
-        <div className="tech-issues-content">
+      {/* ── Technical Issues CTA ─────────────────────────── */}
+      <section className="technical-issues-section container border-top border-bottom">
+        <FadeInUp className="tech-issues-content">
           <h2>SOLVE YOUR TECHNICAL ISSUES</h2>
           <p className="subtitle">Our approach combines fundamental physics with advanced robotics to provide the correct steps for industrial automation.</p>
           <div className="tech-issues-btns">
             <Link href="mailto:contact@thecorrectsteps.com" className="btn-outline-primary">EMAIL CONTACT</Link>
             <button className="btn-solid-muted">CASE STUDIES</button>
           </div>
-        </div>
-        <div className="process-overview glass">
+        </FadeInUp>
+        <ScaleIn className="process-overview glass">
           <div className="process-icon">▤</div>
           <p>PROCESS OVERVIEW</p>
-        </div>
+        </ScaleIn>
       </section>
 
+      {/* ── Footer ───────────────────────────────────────── */}
       <footer className="main-footer">
-        <div className="container">
+        <FadeInUp className="container">
           <div className="footer-top">
             <div className="footer-brand">
               <h3><span className="accent">📚</span> THE CORRECT STEPS</h3>
@@ -268,8 +291,8 @@ export default function Page() {
               <ul>
                 <li><Link href="#">CUSTOM ROBOTICS</Link></li>
                 <li><Link href="#">INDUSTRIAL AUTOMATION</Link></li>
-                <li><Link href="#">CRASH & IMPACT SIMULATION</Link></li>
-                <li><Link href="#">FEM & CAD MODELLING</Link></li>
+                <li><Link href="#">CRASH &amp; IMPACT SIMULATION</Link></li>
+                <li><Link href="#">FEM &amp; CAD MODELLING</Link></li>
               </ul>
             </div>
             <div className="footer-links">
@@ -292,7 +315,7 @@ export default function Page() {
             <p>© 2026 THE CORRECT STEPS. ALL RIGHTS RESERVED.</p>
             <p><Link href="https://thecorrectsteps.com" target="_blank">THECORRECTSTEPS.COM ↗</Link></p>
           </div>
-        </div>
+        </FadeInUp>
       </footer>
     </div>
   );
