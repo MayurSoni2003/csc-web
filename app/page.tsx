@@ -283,7 +283,16 @@ export default function Page() {
         <FadeInUp className="container">
           <div className="footer-top">
             <div className="footer-brand">
-              <h3><span className="accent">📚</span> THE CORRECT STEPS</h3>
+              <h3>
+                <span className="accent">
+                  <img
+                    src="/assets/csc_logo.png"
+                    alt="CSC Logo"
+                    style={{ height: '64px', width: 'auto', objectFit: 'contain', display: 'block', margin: '-12px 0' }}
+                  />
+                </span> 
+                THE CORRECT STEPS
+              </h3>
               <p>SPECIALIZED IN PROBLEM-SOLVING ROBOTICS AND AUTOMATION FOR INDUSTRIAL AND DEFENSE SECTORS.</p>
             </div>
             <div className="footer-links">
