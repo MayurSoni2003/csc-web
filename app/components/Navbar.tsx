@@ -39,9 +39,9 @@ const Navbar = () => {
         <ul className="nav-links desktop-only">
           <li>
             <Link
-              href="#home"
-              className={activeLink === '#home' ? 'active' : ''}
-              onClick={() => handleLinkClick('#home')}
+              href="/"
+              className={activeLink === '/' ? 'active' : ''}
+              onClick={() => handleLinkClick('/')}
             >HOME</Link>
           </li>
           <li>
@@ -57,6 +57,13 @@ const Navbar = () => {
               className={activeLink === '#tech-stack' ? 'active' : ''}
               onClick={() => handleLinkClick('#tech-stack')}
             >TECH STACK</Link>
+          </li>
+          <li>
+            <Link
+              href="/virtual-research-lab"
+              className={activeLink === '/virtual-research-lab' ? 'active' : ''}
+              onClick={() => handleLinkClick('/virtual-research-lab')}
+            >VIRTUAL RESEARCH LAB</Link>
           </li>
           <li>
             <Link
@@ -89,9 +96,10 @@ const Navbar = () => {
 
         {/* Mobile Menu Overlay */}
         <ul className={`nav-links mobile-menu ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
-          <li><Link href="#home" className={activeLink === '#home' ? 'active' : ''} onClick={() => handleLinkClick('#home')}>HOME</Link></li>
+          <li><Link href="/" className={activeLink === '/' ? 'active' : ''} onClick={() => handleLinkClick('/')}>HOME</Link></li>
           <li><Link href="#solutions" className={activeLink === '#solutions' ? 'active' : ''} onClick={() => handleLinkClick('#solutions')}>SOLUTIONS</Link></li>
           <li><Link href="#tech-stack" className={activeLink === '#tech-stack' ? 'active' : ''} onClick={() => handleLinkClick('#tech-stack')}>TECH STACK</Link></li>
+          <li><Link href="/virtual-research-lab" className={activeLink === '/virtual-research-lab' ? 'active' : ''} onClick={() => handleLinkClick('/virtual-research-lab')}>VIRTUAL RESEARCH LAB</Link></li>
           <li><Link href="#contact" className={activeLink === '#contact' ? 'active' : ''} onClick={() => handleLinkClick('#contact')}>CONTACT</Link></li>
           <li><Link href="#consult" className={`btn-secondary nav-btn ${activeLink === '#consult' ? 'active' : ''}`} onClick={() => handleLinkClick('#consult')}>CONSULT AN EXPERT</Link></li>
         </ul>

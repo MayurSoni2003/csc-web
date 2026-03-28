@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 :root {
   --bg-color: #ffffff;
   /* --nav-bg: rgba(0, 45, 75, 1); */
