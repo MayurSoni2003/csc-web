@@ -145,9 +145,8 @@ button {
   top: 100%;
   left: 0;
   width: 100%;
-  background: var(--bg-color);
+  background: var(--nav-bg);
   padding: 2rem;
-  border-bottom: 1px solid var(--border-color);
   z-index: 1001;
 }
 
