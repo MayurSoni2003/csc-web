@@ -14,7 +14,6 @@ export default function VirtualResearchLab() {
   return (
     <div className="vrl-page">
 
-      <div className="pt-16">
         <HeroSection />
         <LabModules />
         <DesignPipeline />
@@ -22,7 +21,6 @@ export default function VirtualResearchLab() {
         <SimulationResults />
         <ResearchPapers />
         <PrintReady />
-      </div>
 
       <AIAssistant />
 
