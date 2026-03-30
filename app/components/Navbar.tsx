@@ -2,11 +2,13 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
+  const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeLink, setActiveLink] = useState('#home');
+  const [activeLink, setActiveLink] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +18,21 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Sync active link with pathname and hash
+  useEffect(() => {
+    const updateActiveLink = () => {
+      if (pathname !== '/') {
+        setActiveLink(pathname);
+      } else {
+        setActiveLink(window.location.hash || '/');
+      }
+    };
+
+    updateActiveLink();
+    window.addEventListener('hashchange', updateActiveLink);
+    return () => window.removeEventListener('hashchange', updateActiveLink);
+  }, [pathname]);
+
   const handleLinkClick = (href: string) => {
     setActiveLink(href);
     setIsMobileMenuOpen(false);
@@ -24,7 +41,7 @@ const Navbar = () => {
   return (
     <nav className={`navbar glass ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container nav-content">
-        <Link href="/" className="logo" onClick={() => handleLinkClick('#home')} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+        <Link href="/" className="logo" onClick={() => handleLinkClick('/')} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <img
             src="/assets/csc_logo.png"
             alt="CSC Logo"
@@ -40,20 +57,20 @@ const Navbar = () => {
           <li>
             <Link
               href="/"
-              className={activeLink === '/' ? 'active' : ''}
+              className={activeLink === '/' || activeLink === '' ? 'active' : ''}
               onClick={() => handleLinkClick('/')}
             >HOME</Link>
           </li>
           <li>
             <Link
-              href="#solutions"
+              href="/#solutions"
               className={activeLink === '#solutions' ? 'active' : ''}
               onClick={() => handleLinkClick('#solutions')}
             >SOLUTIONS</Link>
           </li>
           <li>
             <Link
-              href="#tech-stack"
+              href="/#tech-stack"
               className={activeLink === '#tech-stack' ? 'active' : ''}
               onClick={() => handleLinkClick('#tech-stack')}
             >TECH STACK</Link>
@@ -67,14 +84,14 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              href="#contact"
+              href="/#contact"
               className={activeLink === '#contact' ? 'active' : ''}
               onClick={() => handleLinkClick('#contact')}
             >CONTACT</Link>
           </li>
           <li>
             <Link
-              href="#consult"
+              href="/#consult"
               className={`btn-secondary nav-btn ${activeLink === '#consult' ? 'active' : ''}`}
               onClick={() => handleLinkClick('#consult')}
             >CONSULT AN EXPERT</Link>
@@ -96,12 +113,12 @@ const Navbar = () => {
 
         {/* Mobile Menu Overlay */}
         <ul className={`nav-links mobile-menu ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
-          <li><Link href="/" className={activeLink === '/' ? 'active' : ''} onClick={() => handleLinkClick('/')}>HOME</Link></li>
-          <li><Link href="#solutions" className={activeLink === '#solutions' ? 'active' : ''} onClick={() => handleLinkClick('#solutions')}>SOLUTIONS</Link></li>
-          <li><Link href="#tech-stack" className={activeLink === '#tech-stack' ? 'active' : ''} onClick={() => handleLinkClick('#tech-stack')}>TECH STACK</Link></li>
+          <li><Link href="/" className={activeLink === '/' || activeLink === '' ? 'active' : ''} onClick={() => handleLinkClick('/')}>HOME</Link></li>
+          <li><Link href="/#solutions" className={activeLink === '#solutions' ? 'active' : ''} onClick={() => handleLinkClick('#solutions')}>SOLUTIONS</Link></li>
+          <li><Link href="/#tech-stack" className={activeLink === '#tech-stack' ? 'active' : ''} onClick={() => handleLinkClick('#tech-stack')}>TECH STACK</Link></li>
           <li><Link href="/virtual-research-lab" className={activeLink === '/virtual-research-lab' ? 'active' : ''} onClick={() => handleLinkClick('/virtual-research-lab')}>VIRTUAL RESEARCH LAB</Link></li>
-          <li><Link href="#contact" className={activeLink === '#contact' ? 'active' : ''} onClick={() => handleLinkClick('#contact')}>CONTACT</Link></li>
-          <li><Link href="#consult" className={`btn-secondary nav-btn ${activeLink === '#consult' ? 'active' : ''}`} onClick={() => handleLinkClick('#consult')}>CONSULT AN EXPERT</Link></li>
+          <li><Link href="/#contact" className={activeLink === '#contact' ? 'active' : ''} onClick={() => handleLinkClick('#contact')}>CONTACT</Link></li>
+          <li><Link href="/#consult" className={`btn-secondary nav-btn ${activeLink === '#consult' ? 'active' : ''}`} onClick={() => handleLinkClick('#consult')}>CONSULT AN EXPERT</Link></li>
         </ul>
       </div>
     </nav>

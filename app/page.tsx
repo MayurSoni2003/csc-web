@@ -133,7 +133,7 @@ export default function Page() {
       </header>
 
       {/* ── Services Grid ──────────────────────────────────── */}
-      <section className="services-grid-wrapper container">
+      <section id="solutions" className="services-grid-wrapper container">
         <FadeInUp className="services-header">
           <h2>Core Automation &amp; Robotic Solutions</h2>
         </FadeInUp>
@@ -204,7 +204,7 @@ export default function Page() {
       </section>
 
       {/* ── Tech Stack + Engineering Impact ──────────────── */}
-      <section className="stack-impact-section container">
+      <section id="tech-stack" className="stack-impact-section container">
         <SlideInLeft className="tech-stack">
           <h3><span className="accent">▶</span> Tech Stack</h3>
           <StaggerContainer className="stack-timeline">
@@ -267,7 +267,7 @@ export default function Page() {
         <FadeInUp className="tech-issues-content">
           <h2>SOLVE YOUR TECHNICAL ISSUES</h2>
           <p className="subtitle">Our approach combines fundamental physics with advanced robotics to provide the correct steps for industrial automation.</p>
-          <div className="tech-issues-btns">
+          <div id="consult" className="tech-issues-btns">
             <Link href="mailto:contact@thecorrectsteps.com" className="btn-outline-primary">EMAIL CONTACT</Link>
             <button className="btn-solid-muted">CASE STUDIES</button>
           </div>
@@ -279,7 +279,7 @@ export default function Page() {
       </section>
 
       {/* ── Footer ───────────────────────────────────────── */}
-      <footer className="main-footer">
+      <footer id="contact" className="main-footer">
         <FadeInUp className="container">
           <div className="footer-top">
             <div className="footer-brand">

@@ -1,6 +1,7 @@
 "use client";
 
 import "./virtual-research-lab.css";
+import Navbar from "../components/Navbar";
 import HeroSection from "../components/virtual-research-lab/HeroSection";
 import LabModules from "../components/virtual-research-lab/LabModules";
 import DesignPipeline from "../components/virtual-research-lab/DesignPipeline";
@@ -13,7 +14,7 @@ import AIAssistant from "../components/virtual-research-lab/AIAssistant";
 export default function VirtualResearchLab() {
   return (
     <div className="vrl-page">
-
+        <Navbar />
         <HeroSection />
         <LabModules />
         <DesignPipeline />
