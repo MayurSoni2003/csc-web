@@ -1,7 +1,6 @@
 "use client";
 
 import "./virtual-research-lab.css";
-import Navbar from "../components/Navbar";
 import HeroSection from "../components/virtual-research-lab/HeroSection";
 import LabModules from "../components/virtual-research-lab/LabModules";
 import DesignPipeline from "../components/virtual-research-lab/DesignPipeline";
@@ -14,7 +13,6 @@ import AIAssistant from "../components/virtual-research-lab/AIAssistant";
 export default function VirtualResearchLab() {
   return (
     <div className="vrl-page">
-        <Navbar />
         <HeroSection />
         <LabModules />
         <DesignPipeline />
@@ -23,16 +21,8 @@ export default function VirtualResearchLab() {
         <ResearchPapers />
         <PrintReady />
 
-      <AIAssistant />
+      {/* <AIAssistant /> */}
 
-      {/* Footer */}
-      <footer className="py-12 border-t" style={{ borderColor: 'rgba(0,212,255,0.08)' }}>
-        <div className="container mx-auto px-6 text-center">
-          <p className="text-xs text-muted-foreground font-heading tracking-wider">
-            © 2026 THE CORRECT STEPS — Virtual Research Lab
-          </p>
-        </div>
-      </footer>
     </div>
   );
 }

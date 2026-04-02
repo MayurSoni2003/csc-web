@@ -3,12 +3,28 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useRef } from 'react';
 
 const Navbar = () => {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeLink, setActiveLink] = useState('');
+  const navRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+  const updateNavHeight = () => {
+    if (navRef.current) {
+      const height = navRef.current.offsetHeight;
+      document.documentElement.style.setProperty('--nav-height', `${height}px`);
+    }
+  };
+
+  updateNavHeight();
+
+  window.addEventListener('resize', updateNavHeight);
+  return () => window.removeEventListener('resize', updateNavHeight);
+}, [isScrolled]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,7 +55,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`navbar glass ${isScrolled ? 'scrolled' : ''}`}>
+    <nav ref={navRef} className={`navbar glass ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container nav-content">
         <Link href="/" className="logo" onClick={() => handleLinkClick('/')} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <img
