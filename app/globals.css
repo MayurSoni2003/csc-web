@@ -342,6 +342,14 @@ button {
   align-items: center;
   gap: 5px;
   cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #ffffff;
+  letter-spacing: 0.2px;
+}
+
+.nav-dropdown-wrapper:hover .nav-dropdown-trigger {
+  color: var(--secondary-accent);
 }
 
 .dropdown-chevron {
