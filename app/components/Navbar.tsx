@@ -86,10 +86,10 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              href="/#tech-stack"
-              className={activeLink === '#tech-stack' ? 'active' : ''}
-              onClick={() => handleLinkClick('#tech-stack')}
-            >TECH STACK</Link>
+              href="/#our-products"
+              className={activeLink === '#our-products' ? 'active' : ''}
+              onClick={() => handleLinkClick('#our-products')}
+            >OUR PRODUCTS</Link>
           </li>
           <li>
             <Link
@@ -100,18 +100,32 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              href="/#contact"
-              className={activeLink === '#contact' ? 'active' : ''}
-              onClick={() => handleLinkClick('#contact')}
-            >CONTACT</Link>
+              href="/oltp"
+              className={activeLink === '/oltp' ? 'active' : ''}
+              onClick={() => handleLinkClick('/oltp')}
+            >OLTP</Link>
           </li>
           <li>
+            <Link
+              href="/#about-us"
+              className={activeLink === '#about-us' ? 'active' : ''}
+              onClick={() => handleLinkClick('#about-us')}
+            >ABOUT US</Link>
+          </li>
+          <li>
+            <Link
+              href="/#contact-us"
+              className={activeLink === '#contact-us' ? 'active' : ''}
+              onClick={() => handleLinkClick('#contact-us')}
+            >CONTACT US</Link>
+          </li>
+          {/* <li>
             <Link
               href="/#consult"
               className={`btn-secondary nav-btn ${activeLink === '#consult' ? 'active' : ''}`}
               onClick={() => handleLinkClick('#consult')}
             >CONSULT AN EXPERT</Link>
-          </li>
+          </li> */}
         </ul>
 
         {/* Mobile menu button */}
