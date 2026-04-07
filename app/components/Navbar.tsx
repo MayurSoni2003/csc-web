@@ -10,7 +10,16 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeLink, setActiveLink] = useState('');
+  const [isMobileSolutionsOpen, setIsMobileSolutionsOpen] = useState(false);
   const navRef = useRef<HTMLElement | null>(null);
+
+  const solutionsItems = [
+    'Sustainable & Renewable Products',
+    'Origami & Flexure in Robotics',
+    'Physics Of Design',
+    'CAD & CAE',
+    '3D Printing',
+  ];
 
   useEffect(() => {
   const updateNavHeight = () => {
@@ -77,12 +86,32 @@ const Navbar = () => {
               onClick={() => handleLinkClick('/')}
             >HOME</Link>
           </li>
-          <li>
+          <li className="nav-dropdown-wrapper">
             <Link
               href="/#solutions"
-              className={activeLink === '#solutions' ? 'active' : ''}
+              className={`nav-dropdown-trigger ${activeLink === '#solutions' ? 'active' : ''}`}
               onClick={() => handleLinkClick('#solutions')}
-            >SOLUTIONS</Link>
+            >
+              SOLUTIONS
+              <svg className="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </Link>
+            <div className="nav-dropdown-menu">
+              <div className="nav-dropdown-content">
+                {solutionsItems.map((item, idx) => (
+                  <Link
+                    key={idx}
+                    href="/#solutions"
+                    className="nav-dropdown-item"
+                    onClick={() => handleLinkClick('#solutions')}
+                  >
+                    <span className="nav-dropdown-number">{String(idx + 1).padStart(2, '0')}</span>
+                    <span className="nav-dropdown-label">{item}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
           </li>
           <li>
             <Link
@@ -144,7 +173,30 @@ const Navbar = () => {
         {/* Mobile Menu Overlay */}
         <ul className={`nav-links mobile-menu ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
           <li><Link href="/" className={activeLink === '/' || activeLink === '' ? 'active' : ''} onClick={() => handleLinkClick('/')}>HOME</Link></li>
-          <li><Link href="/#solutions" className={activeLink === '#solutions' ? 'active' : ''} onClick={() => handleLinkClick('#solutions')}>SOLUTIONS</Link></li>
+          <li className="mobile-dropdown-wrapper">
+            <button
+              className={`mobile-dropdown-trigger ${activeLink === '#solutions' ? 'active' : ''}`}
+              onClick={() => setIsMobileSolutionsOpen(!isMobileSolutionsOpen)}
+              aria-expanded={isMobileSolutionsOpen}
+            >
+              SOLUTIONS
+              <svg className={`dropdown-chevron ${isMobileSolutionsOpen ? 'open' : ''}`} width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            <ul className={`mobile-dropdown-list ${isMobileSolutionsOpen ? 'open' : ''}`}>
+              {solutionsItems.map((item, idx) => (
+                <li key={idx}>
+                  <Link
+                    href="/#solutions"
+                    onClick={() => handleLinkClick('#solutions')}
+                  >
+                    {item}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </li>
           <li><Link href="/#tech-stack" className={activeLink === '#tech-stack' ? 'active' : ''} onClick={() => handleLinkClick('#tech-stack')}>TECH STACK</Link></li>
           <li><Link href="/virtual-research-lab" className={activeLink === '/virtual-research-lab' ? 'active' : ''} onClick={() => handleLinkClick('/virtual-research-lab')}>VIRTUAL RESEARCH LAB</Link></li>
           <li><Link href="/#contact" className={activeLink === '#contact' ? 'active' : ''} onClick={() => handleLinkClick('#contact')}>CONTACT</Link></li>

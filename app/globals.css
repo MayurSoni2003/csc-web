@@ -330,6 +330,166 @@ button {
   color: var(--secondary-accent);
 }
 
+/* ===== Solutions Dropdown (Desktop) ===== */
+.nav-links li.nav-dropdown-wrapper {
+  position: relative !important;
+  display: flex;
+  align-items: center;
+}
+
+.nav-dropdown-trigger {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.dropdown-chevron {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.nav-links li.nav-dropdown-wrapper:hover .dropdown-chevron,
+.dropdown-chevron.open {
+  transform: rotate(180deg);
+}
+
+.nav-links li.nav-dropdown-wrapper > .nav-dropdown-menu {
+  position: absolute !important;
+  top: 100% !important;
+  left: 50% !important;
+  transform: translateX(-50%) translateY(8px);
+  padding-top: 16px;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              visibility 0.3s;
+  z-index: 1100 !important;
+  width: max-content;
+}
+
+.nav-links li.nav-dropdown-wrapper:hover > .nav-dropdown-menu {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown-content {
+  min-width: 280px;
+  background: rgba(6, 51, 79, 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 188, 212, 0.15);
+  border-radius: 12px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4),
+              0 0 0 1px rgba(0, 188, 212, 0.08),
+              0 0 30px rgba(0, 188, 212, 0.05);
+}
+
+.nav-dropdown-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px;
+  padding: 12px 16px !important;
+  border-radius: 8px;
+  font-size: 0.82rem !important;
+  font-weight: 500 !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  letter-spacing: 0.02em !important;
+  text-transform: none !important;
+  transition: all 0.2s ease !important;
+  white-space: nowrap;
+}
+
+.nav-dropdown-item:hover {
+  background: rgba(0, 188, 212, 0.1) !important;
+  color: var(--secondary-accent) !important;
+  transform: none !important;
+}
+
+.nav-dropdown-number {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--secondary-accent);
+  opacity: 0.5;
+  min-width: 18px;
+  font-variant-numeric: tabular-nums;
+}
+
+.nav-dropdown-item:hover .nav-dropdown-number {
+  opacity: 1;
+}
+
+.nav-dropdown-label {
+  flex: 1;
+}
+
+/* ===== Solutions Dropdown (Mobile) ===== */
+.mobile-dropdown-wrapper {
+  width: 100%;
+}
+
+.mobile-dropdown-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #ffffff;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  font-family: var(--font-primary);
+  text-transform: uppercase;
+}
+
+.mobile-dropdown-trigger:hover,
+.mobile-dropdown-trigger.active {
+  color: var(--secondary-accent);
+}
+
+.mobile-dropdown-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.3s ease;
+  opacity: 0;
+}
+
+.mobile-dropdown-list.open {
+  max-height: 320px;
+  opacity: 1;
+  padding-top: 0.5rem;
+}
+
+.mobile-dropdown-list li a {
+  display: block;
+  padding: 8px 0 8px 1.25rem;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.7);
+  border-left: 2px solid rgba(0, 188, 212, 0.2);
+  transition: all 0.2s ease;
+}
+
+.mobile-dropdown-list li a:hover {
+  color: var(--secondary-accent);
+  border-left-color: var(--secondary-accent);
+}
+
+/* ------------------------------------- */
+
 .nav-btn.btn-secondary {
   padding: 0.6rem 1.75rem;
   font-size: 0.9rem;
