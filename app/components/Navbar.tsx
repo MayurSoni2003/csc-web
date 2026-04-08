@@ -93,7 +93,8 @@ const Navbar = () => {
             >HOME</Link>
           </li>
           <li className="nav-dropdown-wrapper">
-            <div className={"nav-dropdown-trigger"}
+            <div className={`nav-dropdown-trigger
+              ${pathname.startsWith('/solutions') ? 'active' : ''}`}
             >
               SOLUTIONS
               <svg className="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -105,9 +106,9 @@ const Navbar = () => {
                 {solutionsItems.map((item, idx) => (
                   <Link
                     key={idx}
-                    href="/#solutions"
-                    className="nav-dropdown-item"
-                    onClick={() => handleLinkClick('#solutions')}
+                    href="/solutions"
+                    className={"nav-dropdown-item"}
+                    onClick={() => handleLinkClick('/solutions')}
                   >
                     {/* <span className="nav-dropdown-number">{String(idx + 1).padStart(2, '0')}</span> */}
                     <span className="nav-dropdown-label">{item}</span>
