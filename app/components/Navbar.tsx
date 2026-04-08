@@ -132,10 +132,11 @@ const Navbar = () => {
           </li> */}
           <li>
             <Link
-              href="/oltp"
-              className={activeLink === '/oltp' ? 'active' : ''}
-              onClick={() => handleLinkClick('/oltp')}
-            >OLTP</Link>
+              href="https://oltp.thecorrectsteps.com"
+              target="_blank"
+            >
+              OLTP
+            </Link>
           </li>
           <li className="nav-dropdown-wrapper">
             <div 
