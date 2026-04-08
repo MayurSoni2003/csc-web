@@ -350,6 +350,15 @@ button {
   color: var(--secondary-accent);
 }
 
+.nav-dropdown-trigger.active {
+  color: var(--secondary-accent);
+}
+
+.nav-dropdown-item.active {
+  background: rgba(0, 188, 212, 0.1);
+  color: var(--secondary-accent) !important;
+}
+
 /* ===== Solutions Dropdown (Desktop) ===== */
 .nav-links li.nav-dropdown-wrapper {
   position: relative !important;

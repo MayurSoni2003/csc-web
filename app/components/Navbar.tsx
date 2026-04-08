@@ -22,9 +22,9 @@ const Navbar = () => {
   ];
 
   const researchItems = [
-    'Virtual Research Lab',
-    'Research Papers & Patents',
-    'Blogs, Articles & News',
+    { label: 'Virtual Research Lab', href: '/research/virtual-research-lab' },
+    { label: 'Research Papers & Patents', href: '/research/research-papers-patents' },
+    { label: 'Blogs, Articles & News', href: '/research/blogs-articles-news' },
   ];
 
   useEffect(() => {
@@ -138,7 +138,9 @@ const Navbar = () => {
             >OLTP</Link>
           </li>
           <li className="nav-dropdown-wrapper">
-            <div className={"nav-dropdown-trigger"}
+            <div 
+              className={`nav-dropdown-trigger
+              ${pathname.startsWith('/research') ? 'active' : ''}`}
             >
                RESEARCH
               <svg className="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -150,11 +152,11 @@ const Navbar = () => {
                 {researchItems.map((item, idx) => (
                   <Link
                     key={idx}
-                    href="/#solutions"
-                    className="nav-dropdown-item"
-                    onClick={() => handleLinkClick('#solutions')}
+                    href={item.href}
+                    className={`nav-dropdown-item ${pathname === item.href ? 'active' : ''}`}
+                    onClick={() => handleLinkClick(item.href)}
                   >
-                    <span className="nav-dropdown-label">{item}</span>
+                    <span className="nav-dropdown-label">{item.label}</span>
                   </Link>
                 ))}
               </div>
