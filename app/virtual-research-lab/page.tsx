@@ -1,14 +1,14 @@
 "use client";
 
 import "./virtual-research-lab.css";
-import HeroSection from "../components/virtual-research-lab/HeroSection";
-import LabModules from "../components/virtual-research-lab/LabModules";
-import DesignPipeline from "../components/virtual-research-lab/DesignPipeline";
-import ModelViewer from "../components/virtual-research-lab/ModelViewer";
-import SimulationResults from "../components/virtual-research-lab/SimulationResults";
-import ResearchPapers from "../components/virtual-research-lab/ResearchPapers";
-import PrintReady from "../components/virtual-research-lab/PrintReady";
-import AIAssistant from "../components/virtual-research-lab/AIAssistant";
+import HeroSection from "./components/HeroSection";
+import LabModules from "./components/LabModules";
+import DesignPipeline from "./components/DesignPipeline";
+import ModelViewer from "./components/ModelViewer";
+import SimulationResults from "./components/SimulationResults";
+import ResearchPapers from "./components/ResearchPapers";
+import PrintReady from "./components/PrintReady";
+import AIAssistant from "./components/AIAssistant";
 
 export default function VirtualResearchLab() {
   return (

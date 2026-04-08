@@ -21,6 +21,12 @@ const Navbar = () => {
     '3D Printing',
   ];
 
+  const researchItems = [
+    'Virtual Research Lab',
+    'Research Papers & Patents',
+    'Blogs, Articles & News',
+  ];
+
   useEffect(() => {
   const updateNavHeight = () => {
     if (navRef.current) {
@@ -66,13 +72,13 @@ const Navbar = () => {
   return (
     <nav ref={navRef} className={`navbar glass ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container nav-content">
-        <Link href="/" className="logo" onClick={() => handleLinkClick('/')} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+        <Link href="/" className="logo" onClick={() => handleLinkClick('/')}>
           <img
-            src="/assets/csc_logo.png"
+            src="/assets/csc_logo1.png"
             alt="CSC Logo"
-            style={{ height: '64px', width: 'auto', objectFit: 'contain', display: 'block', margin: '-12px 0' }}
+            className='logo-img'
           />
-          <span style={{ fontSize: '1.1rem', fontWeight: '700', letterSpacing: '0.5px', color: 'white', lineHeight: '1.2' }}>
+          <span className='logo-text'>
             THE CORRECT STEPS
           </span>
         </Link>
@@ -103,7 +109,7 @@ const Navbar = () => {
                     className="nav-dropdown-item"
                     onClick={() => handleLinkClick('#solutions')}
                   >
-                    <span className="nav-dropdown-number">{String(idx + 1).padStart(2, '0')}</span>
+                    {/* <span className="nav-dropdown-number">{String(idx + 1).padStart(2, '0')}</span> */}
                     <span className="nav-dropdown-label">{item}</span>
                   </Link>
                 ))}
@@ -112,24 +118,47 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              href="/#our-products"
-              className={activeLink === '#our-products' ? 'active' : ''}
-              onClick={() => handleLinkClick('#our-products')}
-            >OUR PRODUCTS</Link>
+              href="/#products"
+              className={activeLink === '#products' ? 'active' : ''}
+              onClick={() => handleLinkClick('#products')}
+            > PRODUCTS</Link>
           </li>
-          <li>
+          {/* <li>
             <Link
               href="/virtual-research-lab"
               className={activeLink === '/virtual-research-lab' ? 'active' : ''}
               onClick={() => handleLinkClick('/virtual-research-lab')}
             >VIRTUAL RESEARCH LAB</Link>
-          </li>
+          </li> */}
           <li>
             <Link
               href="/oltp"
               className={activeLink === '/oltp' ? 'active' : ''}
               onClick={() => handleLinkClick('/oltp')}
             >OLTP</Link>
+          </li>
+          <li className="nav-dropdown-wrapper">
+            <div className={"nav-dropdown-trigger"}
+            >
+               RESEARCH
+              <svg className="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+            <div className="nav-dropdown-menu">
+              <div className="nav-dropdown-content">
+                {researchItems.map((item, idx) => (
+                  <Link
+                    key={idx}
+                    href="/#solutions"
+                    className="nav-dropdown-item"
+                    onClick={() => handleLinkClick('#solutions')}
+                  >
+                    <span className="nav-dropdown-label">{item}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
           </li>
           <li>
             <Link
@@ -144,6 +173,13 @@ const Navbar = () => {
               className={activeLink === '#contact-us' ? 'active' : ''}
               onClick={() => handleLinkClick('#contact-us')}
             >CONTACT US</Link>
+          </li>
+          <li>
+            <Link
+              href="/#careers"
+              className={activeLink === '#careers' ? 'active' : ''}
+              onClick={() => handleLinkClick('#careers')}
+            >CAREERS</Link>
           </li>
           {/* <li>
             <Link
