@@ -11,6 +11,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "The Correct Steps | Engineering & Robotics Solutions",
   description: "Specialized in problem-solving robotics and automation for industrial and defense sectors.",
+  icons: {
+    icon: "/assets/csc_logo1.png"
+  }
 };
 
 export default function RootLayout({
