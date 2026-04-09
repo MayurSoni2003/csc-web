@@ -165,10 +165,10 @@ const Navbar = () => {
             </div>
           </li>
           <li>
-            <Link
-              href="/#about-us"
-              className={activeLink === '#about-us' ? 'active' : ''}
-              onClick={() => handleLinkClick('#about-us')}
+            <Link 
+              href="/about-us" 
+              className={pathname.startsWith('/about-us') ? 'active' : ''}
+              onClick={() => handleLinkClick('/about-us')}
             >ABOUT US</Link>
           </li>
           <li>
@@ -236,6 +236,7 @@ const Navbar = () => {
           </li>
           <li><Link href="/#tech-stack" className={activeLink === '#tech-stack' ? 'active' : ''} onClick={() => handleLinkClick('#tech-stack')}>TECH STACK</Link></li>
           <li><Link href="/virtual-research-lab" className={activeLink === '/virtual-research-lab' ? 'active' : ''} onClick={() => handleLinkClick('/virtual-research-lab')}>VIRTUAL RESEARCH LAB</Link></li>
+          <li><Link href="/about-us" className={pathname.startsWith('/about-us') ? 'active' : ''} onClick={() => handleLinkClick('/about-us')}>ABOUT US</Link></li>
           <li><Link href="/#contact" className={activeLink === '#contact' ? 'active' : ''} onClick={() => handleLinkClick('#contact')}>CONTACT</Link></li>
           <li><Link href="/#consult" className={`btn-secondary nav-btn ${activeLink === '#consult' ? 'active' : ''}`} onClick={() => handleLinkClick('#consult')}>CONSULT AN EXPERT</Link></li>
         </ul>
