@@ -165,8 +165,8 @@ const Navbar = () => {
             </div>
           </li>
           <li>
-            <Link
-              href="/about-us"
+            <Link 
+              href="/about-us" 
               className={pathname.startsWith('/about-us') ? 'active' : ''}
               onClick={() => handleLinkClick('/about-us')}
             >ABOUT US</Link>
