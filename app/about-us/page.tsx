@@ -14,8 +14,9 @@ export default function AboutUsPage() {
     <div className="relative bg-[#f9fafb] text-slate-800 pb-32 overflow-hidden">
       
       {/* ── Background Gradients ── */}
-      <div className="absolute top-[-10%] right-[-10%] w-[800px] h-[800px] bg-[radial-gradient(circle,rgba(0,188,212,0.06)_0%,transparent_70%)] blur-[120px] z-0 pointer-events-none mix-blend-multiply"></div>
-      <div className="absolute bottom-[20%] left-[-10%] w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(0,139,163,0.05)_0%,transparent_70%)] blur-[120px] z-0 pointer-events-none mix-blend-multiply"></div>
+      <div className="fixed top-[10%] left-[-200px] w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(0,188,212,0.25)_0%,transparent_70%)] blur-[100px] z-0 pointer-events-none"></div>
+      <div className="fixed top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-[radial-gradient(circle,rgba(0,139,163,0.20)_0%,transparent_70%)] blur-[140px] z-0 pointer-events-none"></div>
+      <div className="fixed bottom-[10%] right-[-200px] w-[700px] h-[700px] bg-[radial-gradient(circle,rgba(0,188,212,0.25)_0%,transparent_70%)] blur-[120px] z-0 pointer-events-none"></div>
 
       {/* ── 1. Hero Section ── */}
       <section className="relative pt-[160px] pb-24 px-6 z-10 text-center max-w-[1000px] mx-auto">

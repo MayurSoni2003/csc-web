@@ -93,9 +93,9 @@ export default function SolutionsPage() {
     <div className="app bg-[#f9fafb] text-slate-800 pb-20">
       
       {/* ── Background Shades (Matching Light Theme) ── */}
-      <div className="fixed top-[10%] left-[-200px] w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(0,139,163,0.05)_0%,transparent_70%)] blur-[100px] z-0 pointer-events-none mix-blend-multiply"></div>
-      <div className="fixed top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-[radial-gradient(circle,rgba(0,139,163,0.03)_0%,transparent_70%)] blur-[140px] z-0 pointer-events-none mix-blend-multiply"></div>
-      <div className="fixed bottom-[10%] right-[-200px] w-[700px] h-[700px] bg-[radial-gradient(circle,rgba(0,139,163,0.04)_0%,transparent_70%)] blur-[120px] z-0 pointer-events-none mix-blend-multiply"></div>
+      <div className="fixed top-[10%] left-[-200px] w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(0,188,212,0.25)_0%,transparent_70%)] blur-[100px] z-0 pointer-events-none"></div>
+      <div className="fixed top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-[radial-gradient(circle,rgba(0,139,163,0.20)_0%,transparent_70%)] blur-[140px] z-0 pointer-events-none"></div>
+      <div className="fixed bottom-[10%] right-[-200px] w-[700px] h-[700px] bg-[radial-gradient(circle,rgba(0,188,212,0.25)_0%,transparent_70%)] blur-[120px] z-0 pointer-events-none"></div>
 
       {/* ── Hero ── */}
       <header className="relative pt-[120px] pb-16 flex flex-col items-center justify-center text-center overflow-hidden z-10 px-6">
@@ -163,7 +163,7 @@ export default function SolutionsPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="mx-auto px-6 max-w-[1200px] relative z-10 mt-8 text-center py-16">
+      {/* <section className="mx-auto px-6 max-w-[1200px] relative z-10 mt-8 text-center py-16">
         
         <FadeInUp>
           <div className="bg-white/70 backdrop-blur-md border border-black/5 shadow-[0_8px_32px_rgba(0,0,0,0.05)] rounded-2xl p-12 md:p-20">
@@ -176,7 +176,7 @@ export default function SolutionsPage() {
             </button>
           </div>
         </FadeInUp>
-      </section>
+      </section> */}
     </div>
   );
 }
