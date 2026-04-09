@@ -7,7 +7,7 @@ import network from './assets/network.png';
 
 export default function ContactUsPage() {
   return (
-    <div className="relative bg-[#f9fafb] text-slate-800 min-h-screen pt-[120px] pb-32 overflow-hidden">
+    <div className="relative bg-[#f9fafb] text-slate-800 min-h-screen pt-[120px] pb-16 overflow-hidden">
       
       {/* ── Background Gradients ── */}
       <div className="absolute top-[-10%] right-[-10%] w-[800px] h-[800px] bg-[radial-gradient(circle,rgba(0,188,212,0.06)_0%,transparent_70%)] blur-[120px] z-0 pointer-events-none mix-blend-multiply"></div>
@@ -119,7 +119,7 @@ export default function ContactUsPage() {
                       <input 
                         type="text" 
                         id="name" 
-                        placeholder="John Doe"
+                        placeholder="Your Name"
                         className="w-full bg-slate-50 border border-slate-200 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-[#008ba3]/30 focus:border-[#008ba3] transition-all text-slate-800 placeholder:text-slate-400"
                         required
                       />
@@ -143,7 +143,7 @@ export default function ContactUsPage() {
                     <input 
                       type="email" 
                       id="email" 
-                      placeholder="hello@company.com"
+                      placeholder="your@email.com"
                       className="w-full bg-slate-50 border border-slate-200 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-[#008ba3]/30 focus:border-[#008ba3] transition-all text-slate-800 placeholder:text-slate-400"
                       required
                     />
@@ -191,7 +191,7 @@ export default function ContactUsPage() {
             </SlideInRight>
           </div>
         </div>
-        <section className="relative z-10 px-6 pt-20 lg:px-8">
+        <section className="relative z-10 px-6 pt-16 lg:px-8">
             <div className="mx-auto max-w-6xl">
                 <FadeInUp>
                     <div className="relative overflow-hidden rounded-[32px] border border-[#008ba3]/15 bg-[linear-gradient(135deg,rgba(6,51,79,0.98),rgba(0,139,163,0.95))] px-8 py-12 text-center text-white shadow-[0_26px_70px_rgba(6,51,79,0.28)] sm:px-12 sm:py-16">
