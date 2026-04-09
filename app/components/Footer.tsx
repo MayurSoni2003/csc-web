@@ -23,25 +23,25 @@ function Footer(){
                         <div className="footer-links">
                         <h4>SOLUTIONS</h4>
                         <ul>
-                            <li><Link href="#">CUSTOM ROBOTICS</Link></li>
-                            <li><Link href="#">INDUSTRIAL AUTOMATION</Link></li>
-                            <li><Link href="#">CRASH &amp; IMPACT SIMULATION</Link></li>
-                            <li><Link href="#">FEM &amp; CAD MODELLING</Link></li>
+                            <li><Link href="#">Sustainable & Renewable Products</Link></li>
+                            <li><Link href="#">Origami & Flexure</Link></li>
+                            <li><Link href="#">Physics of Design</Link></li>
+                            <li><Link href="#">3D Printing</Link></li>
                         </ul>
                         </div>
                         <div className="footer-links">
-                        <h4>TECHNOLOGIES</h4>
+                        <h4>OUR RESEARCH</h4>
                         <ul>
-                            <li><Link href="#">BIOMECHANICS</Link></li>
-                            <li><Link href="#">FLEXURE JOINTS</Link></li>
-                            <li><Link href="#">ORIGAMI MICRO-ROBOTICS</Link></li>
+                            <li><Link href="#">Research Papers & Patents</Link></li>
+                            <li><Link href="#">Blogs, Articles & News</Link></li>
                         </ul>
                         </div>
                         <div className="footer-links">
                         <h4>LEGAL</h4>
                         <ul>
-                            <li><Link href="#">PRIVACY POLICY</Link></li>
-                            <li><Link href="#">TERMS OF SERVICE</Link></li>
+                            <li><Link href="#">Terms & Conditions</Link></li>
+                            <li><Link href="#">Refund & Cancellation Policy</Link></li>
+                            <li><Link href="#">Privacy Policy</Link></li>
                         </ul>
                         </div>
                     </div>

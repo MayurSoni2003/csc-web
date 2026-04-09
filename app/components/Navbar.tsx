@@ -22,7 +22,6 @@ const Navbar = () => {
   ];
 
   const researchItems = [
-    { label: 'Virtual Research Lab', href: '/research/virtual-research-lab' },
     { label: 'Research Papers & Patents', href: '/research/research-papers-patents' },
     { label: 'Blogs, Articles & News', href: '/research/blogs-articles-news' },
   ];
@@ -90,13 +89,13 @@ const Navbar = () => {
               href="/"
               className={activeLink === '/' || activeLink === '' ? 'active' : ''}
               onClick={() => handleLinkClick('/')}
-            >HOME</Link>
+            >Home</Link>
           </li>
           <li className="nav-dropdown-wrapper">
             <div className={`nav-dropdown-trigger
               ${pathname.startsWith('/solutions') ? 'active' : ''}`}
             >
-              SOLUTIONS
+              Solutions
               <svg className="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -122,15 +121,15 @@ const Navbar = () => {
               href="/#products"
               className={activeLink === '#products' ? 'active' : ''}
               onClick={() => handleLinkClick('#products')}
-            > PRODUCTS</Link>
+            > Our Products</Link>
           </li>
-          {/* <li>
+          <li>
             <Link
               href="/virtual-research-lab"
               className={activeLink === '/virtual-research-lab' ? 'active' : ''}
               onClick={() => handleLinkClick('/virtual-research-lab')}
-            >VIRTUAL RESEARCH LAB</Link>
-          </li> */}
+            >Virtual Research Lab</Link>
+          </li>
           <li>
             <Link
               href="https://oltp.thecorrectsteps.com"
@@ -144,7 +143,7 @@ const Navbar = () => {
               className={`nav-dropdown-trigger
               ${pathname.startsWith('/research') ? 'active' : ''}`}
             >
-               RESEARCH
+               Research
               <svg className="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -169,21 +168,21 @@ const Navbar = () => {
               href="/about-us" 
               className={pathname.startsWith('/about-us') ? 'active' : ''}
               onClick={() => handleLinkClick('/about-us')}
-            >ABOUT US</Link>
+            >About Us</Link>
           </li>
           <li>
             <Link
               href="/contact-us"
               className={pathname.startsWith('/contact-us') ? 'active' : ''}
               onClick={() => handleLinkClick('/contact-us')}
-            >CONTACT US</Link>
+            >Contact Us</Link>
           </li>
           <li>
             <Link
               href="/#careers"
               className={activeLink === '#careers' ? 'active' : ''}
               onClick={() => handleLinkClick('#careers')}
-            >CAREERS</Link>
+            >Careers</Link>
           </li>
           {/* <li>
             <Link
