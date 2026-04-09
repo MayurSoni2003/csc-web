@@ -40,7 +40,7 @@ export default function ContactUsPage() {
             <SlideInLeft>
               <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {/* Email */}
-                <StaggerItem>
+                <StaggerItem className="sm:col-span-2 xl:col-span-1">
                   <a href="mailto:info@thecorrectsteps.com" className="flex flex-col p-6 rounded-2xl bg-white border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_10px_30px_rgba(0,188,212,0.1)] hover:border-[#008ba3]/20 transition-all group h-full">
                     <div className="w-10 h-10 rounded-full bg-[#008ba3]/10 flex items-center justify-center mb-4 group-hover:bg-[#008ba3] transition-colors">
                       <svg className="w-5 h-5 text-[#008ba3] group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -48,7 +48,7 @@ export default function ContactUsPage() {
                       </svg>
                     </div>
                     <span className="text-sm font-bold text-slate-400 tracking-wider uppercase mb-1">Email Us</span>
-                    <span className="text-slate-800 font-bold truncate">info@thecorrectsteps.com</span>
+                    <span className="text-slate-800 font-bold whitespace-nowrap text-[0.95rem] xl:text-base">info@thecorrectsteps.com</span>
                   </a>
                 </StaggerItem>
 
@@ -80,7 +80,7 @@ export default function ContactUsPage() {
                 </StaggerItem>
 
                 {/* Socials */}
-                <StaggerItem>
+                <StaggerItem className="sm:col-span-2 xl:col-span-1">
                   <div className="flex flex-col p-6 rounded-2xl bg-white border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.02)] h-full justify-between">
                     <span className="text-sm font-bold text-slate-400 tracking-wider uppercase mb-4">Follow Us</span>
                     <div className="flex items-center gap-3">
