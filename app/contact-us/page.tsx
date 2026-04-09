@@ -20,7 +20,7 @@ export default function ContactUsPage() {
           <div className="lg:col-span-5 flex flex-col justify-between h-full space-y-12">
             <SlideInLeft>
               <div className="inline-block px-4 py-1.5 rounded-full bg-white border border-[#008ba3]/20 shadow-sm text-sm font-bold text-[#008ba3] tracking-widest uppercase mb-6">
-                Connect
+                Let's Connect 
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-showcase font-extrabold uppercase tracking-tight text-slate-900 leading-[1.1] mb-6">
                 Get in Touch <br className="hidden md:block" />
@@ -190,8 +190,26 @@ export default function ContactUsPage() {
               </div>
             </SlideInRight>
           </div>
-
         </div>
+        <section className="relative z-10 px-6 pt-20 lg:px-8">
+            <div className="mx-auto max-w-6xl">
+                <FadeInUp>
+                    <div className="relative overflow-hidden rounded-[32px] border border-[#008ba3]/15 bg-[linear-gradient(135deg,rgba(6,51,79,0.98),rgba(0,139,163,0.95))] px-8 py-12 text-center text-white shadow-[0_26px_70px_rgba(6,51,79,0.28)] sm:px-12 sm:py-16">
+                    <div className="absolute left-1/2 top-0 h-40 w-40 -translate-x-1/2 rounded-full bg-white/10 blur-3xl" />
+                    <p className="relative text-sm font-semibold uppercase tracking-[0.3em] text-cyan-100">
+                        Build Something Valuable
+                    </p>
+                    <h2 className="relative mt-5 text-3xl font-extrabold uppercase tracking-[-0.03em] sm:text-4xl">
+                        Let&apos;s collaborate and create impactful solutions together.
+                    </h2>
+                    <p className="relative mx-auto mt-5 max-w-2xl text-base leading-8 text-slate-100 sm:text-lg">
+                        Whether you are exploring a new idea, planning a project, or looking for a strong
+                        engineering partner, we would love to hear from you.
+                    </p>
+                    </div>
+                </FadeInUp>
+            </div>
+        </section>
       </div>
     </div>
   );
