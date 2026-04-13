@@ -69,9 +69,9 @@ const Navbar = () => {
   };
 
   const desktopLinkBaseClasses =
-    'text-[0.9rem] font-medium tracking-[0.2px] transition-all duration-300 ease-[ease] hover:!text-[var(--secondary-accent)]';
+    'text-[0.9rem] font-medium tracking-[0.2px] transition-all duration-300 ease-[ease] hover:text-[var(--secondary-accent)]';
   const desktopLinkClasses = (isActive: boolean) =>
-    `${desktopLinkBaseClasses} ${isActive ? '!text-[var(--secondary-accent)]' : ''}`;
+    `${desktopLinkBaseClasses} ${isActive ? 'text-[var(--secondary-accent)]' : ''}`;
 
   const mobileLinkBaseClasses =
     'text-[0.9rem] font-medium tracking-[0.2px] transition-all duration-300 ease-[ease] hover:text-[var(--secondary-accent)] max-[600px]:w-full max-[600px]:p-2 max-[600px]:text-center max-[600px]:text-[1.2rem]';
