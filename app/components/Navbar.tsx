@@ -208,9 +208,9 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              href="/#careers"
-              className={desktopLinkClasses(activeLink === '#careers')}
-              onClick={() => handleLinkClick('#careers')}
+              href="/careers"
+              className={desktopLinkClasses(pathname.startsWith('/careers'))}
+              onClick={() => handleLinkClick('/careers')}
             >
               Careers
             </Link>
@@ -281,6 +281,11 @@ const Navbar = () => {
           <li>
             <Link href="/contact-us" className={mobileLinkClasses(pathname.startsWith('/contact-us'))} onClick={() => handleLinkClick('/contact-us')}>
               CONTACT
+            </Link>
+          </li>
+          <li>
+            <Link href="/careers" className={mobileLinkClasses(pathname.startsWith('/careers'))} onClick={() => handleLinkClick('/careers')}>
+              CAREERS
             </Link>
           </li>
           <li>
