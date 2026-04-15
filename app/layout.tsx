@@ -27,7 +27,7 @@ export default function RootLayout({
         className={`${inter.className} antialiased`}
       >
         <Navbar />
-        <main className="pt-[var(--nav-height)] -mt-22"> {/* Add padding-top - adjust based on navbar height */}
+        <main>
           {children}
         </main>
         <Footer />
