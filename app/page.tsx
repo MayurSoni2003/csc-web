@@ -115,11 +115,11 @@ export default function Page() {
         {/* <div className="absolute inset-0 bg-gradient-to-t from-[#f9fafb]/40 via-transparent to-transparent z-[1]"></div> */}
 
         {/* Content */}
-        <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-10 pt-24 md:pt-0">
+        <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-10 pt-24 md:pt-0 grid grid-cols-1 grid-rows-1">
           {HERO_SLIDES.map((slide, idx) => (
             <div
               key={idx}
-              className={`max-w-3xl lg:max-w-4xl sm:max-w-2xl transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${idx === currentSlide ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8 absolute pointer-events-none'}`}
+              className={`col-start-1 row-start-1 max-w-3xl lg:max-w-4xl sm:max-w-2xl transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${idx === currentSlide ? 'opacity-100 translate-y-0 z-10' : 'opacity-0 translate-y-8 pointer-events-none z-0'}`}
             >
               <div className="inline-block px-4 py-1.5 rounded-full bg-white/80 border border-[#008ba3]/20 shadow-sm text-sm font-bold text-[#008ba3] tracking-widest uppercase mb-6 backdrop-blur-md">
                 {slide.tagline}
