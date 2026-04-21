@@ -121,7 +121,7 @@ const Navbar = () => {
               >Home</Link>
             </li>
             <li className="group/nav-dropdown relative !flex items-center">
-              <div className={`inline-flex !items-center gap-[5px] cursor-pointer text-[0.9rem] font-medium tracking-[0.2px] text-white group-hover/nav-dropdown:text-[var(--secondary-accent)] ${pathname.startsWith('/solutions') ? 'text-[var(--secondary-accent)]' : ''}`}>
+              <div className={`inline-flex !items-center gap-[5px] cursor-pointer text-[0.9rem] font-medium tracking-[0.2px] transition-all duration-300 ease-[ease] group-hover/nav-dropdown:text-[var(--secondary-accent)] ${pathname.startsWith('/solutions') ? 'text-[var(--secondary-accent)]' : ''}`}>
                 Solutions
                 <svg className={`${dropdownChevronClasses} group-hover/nav-dropdown:rotate-180`} width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -158,7 +158,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="group/nav-dropdown relative !flex items-center">
-              <div className={`inline-flex !items-center gap-[5px] cursor-pointer text-[0.9rem] font-medium tracking-[0.2px] text-white group-hover/nav-dropdown:text-[var(--secondary-accent)] ${pathname.startsWith('/research') ? 'text-[var(--secondary-accent)]' : ''}`}>
+              <div className={`inline-flex !items-center gap-[5px] cursor-pointer text-[0.9rem] font-medium tracking-[0.2px] transition-all duration-300 ease-[ease] group-hover/nav-dropdown:text-[var(--secondary-accent)] ${pathname.startsWith('/research') ? 'text-[var(--secondary-accent)]' : ''}`}>
                  Research
                 <svg className={`${dropdownChevronClasses} group-hover/nav-dropdown:rotate-180`} width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
