@@ -15,11 +15,11 @@ const Navbar = () => {
   const navRef = useRef<HTMLElement | null>(null);
 
   const solutionsItems = [
-    'Sustainable & Renewable Products',
-    'Origami & Flexure in Robotics',
-    'Physics Of Design',
-    'CAD & CAE',
-    '3D Printing',
+    { label: 'Sustainable & Renewable Products', href: '/solutions/sustainable-renewable-products' },
+    { label: 'Origami & Flexure in Robotics', href: '/solutions/origami-flexure-robotics' },
+    { label: 'Physics Of Design', href: '/solutions/physics-of-design' },
+    { label: 'CAD & CAE', href: '/solutions/cad-cae' },
+    { label: '3D Printing', href: '/solutions/3d-printing' },
   ];
 
   const researchItems = [
@@ -132,11 +132,11 @@ const Navbar = () => {
                   {solutionsItems.map((item, idx) => (
                     <Link
                       key={idx}
-                      href="/solutions"
-                      className={dropdownItemBaseClasses}
-                      onClick={() => handleLinkClick('/solutions')}
+                      href={item.href}
+                      className={`${dropdownItemBaseClasses} ${pathname === item.href ? 'bg-[rgba(0,188,212,0.1)] text-[var(--secondary-accent)]' : ''}`}
+                      onClick={() => handleLinkClick(item.href)}
                     >
-                      <span className="flex-1 text-center">{item}</span>
+                      <span className="flex-1 text-center">{item.label}</span>
                     </Link>
                   ))}
                 </div>
@@ -263,12 +263,12 @@ const Navbar = () => {
                 {solutionsItems.map((item, idx) => (
                   <li key={idx}>
                     <Link
-                      href="/solutions"
-                      className="block border-l-2 border-l-[rgba(0,188,212,0.2)] py-2.5 pr-6 pl-10 text-[0.82rem] transition-all duration-200 hover:border-l-[#00bcd4] hover:bg-[rgba(255,255,255,0.03)]"
-                      style={{ color: 'rgba(255,255,255,0.6)' }}
-                      onClick={() => handleLinkClick('/solutions')}
+                      href={item.href}
+                      className={`block border-l-2 py-2.5 pr-6 pl-10 text-[0.82rem] transition-all duration-200 hover:border-l-[#00bcd4] hover:bg-[rgba(255,255,255,0.03)] ${pathname === item.href ? 'border-l-[#00bcd4]' : 'border-l-[rgba(0,188,212,0.2)]'}`}
+                      style={{ color: pathname === item.href ? '#00bcd4' : 'rgba(255,255,255,0.6)' }}
+                      onClick={() => handleLinkClick(item.href)}
                     >
-                      {item}
+                      {item.label}
                     </Link>
                   </li>
                 ))}
