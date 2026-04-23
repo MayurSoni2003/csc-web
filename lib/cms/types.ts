@@ -56,6 +56,40 @@ export interface CMSStats {
   activeYears: string;
 }
 
+// ── Blog Post ────────────────────────────────────────────────
+
+export interface BlogPost {
+  /** Unique identifier (CMS-agnostic) */
+  id: string;
+
+  /** URL-friendly slug */
+  slug: string;
+
+  /** Blog post title */
+  title: string;
+
+  /** Short excerpt / summary for card display */
+  excerpt: string | null;
+
+  /** Full article body (HTML or rich text) */
+  content: string | null;
+
+  /** Cover image URL for cards and hero banner */
+  coverImageUrl: string | null;
+
+  /** Author display name */
+  authorName: string | null;
+
+  /** Category (e.g. "Robotics", "Sustainability") */
+  category: string | null;
+
+  /** Whether this post is featured / highlighted */
+  isFeatured: boolean;
+
+  /** Publication date as ISO string */
+  publishedAt: string | null;
+}
+
 // ── CMS Provider Interface ──────────────────────────────────
 
 export interface CMSProvider {
@@ -65,4 +99,17 @@ export interface CMSProvider {
    * an empty array on failure.
    */
   getResearchPapers(): Promise<ResearchPaper[]>;
+
+  /**
+   * Fetch all blog posts from the CMS.
+   * Implementations should handle errors gracefully and return
+   * an empty array on failure.
+   */
+  getBlogPosts(): Promise<BlogPost[]>;
+
+  /**
+   * Fetch a single blog post by its slug.
+   * Returns null if not found or on error.
+   */
+  getBlogPostBySlug(slug: string): Promise<BlogPost | null>;
 }

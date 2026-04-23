@@ -10,7 +10,7 @@
  *   3. Set CMS_PROVIDER=<name> in .env.local
  */
 
-import type { CMSProvider, ResearchPaper, CMSStats } from './types';
+import type { CMSProvider, ResearchPaper, CMSStats, BlogPost } from './types';
 import { StrapiProvider } from './providers/strapi';
 
 // ── Factory ──────────────────────────────────────────────────
@@ -38,20 +38,12 @@ function createProvider(): CMSProvider {
 
 const cms = createProvider();
 
-// ── Public API ───────────────────────────────────────────────
+// ── Public API — Research Papers ────────────────────────────
 
-/**
- * Fetch all research papers from the configured CMS.
- */
 export async function getResearchPapers(): Promise<ResearchPaper[]> {
   return cms.getResearchPapers();
 }
 
-/**
- * Derive display stats from a list of research papers.
- * Stats are computed client-side from already-fetched data,
- * so this works regardless of which CMS is behind the scenes.
- */
 export function deriveStats(papers: ResearchPaper[]): CMSStats {
   const patentFields = new Set(['patent']);
 
@@ -65,7 +57,6 @@ export function deriveStats(papers: ResearchPaper[]): CMSStats {
     patentFields.has(p.field?.toLowerCase() ?? '')
   ).length;
 
-  // Derive active research years from the year range
   const years = papers
     .map((p) => p.year)
     .filter((y): y is number => y !== null)
@@ -87,6 +78,16 @@ export function deriveStats(papers: ResearchPaper[]): CMSStats {
   };
 }
 
+// ── Public API — Blog Posts ─────────────────────────────────
+
+export async function getBlogPosts(): Promise<BlogPost[]> {
+  return cms.getBlogPosts();
+}
+
+export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> {
+  return cms.getBlogPostBySlug(slug);
+}
+
 // ── Re-exports ───────────────────────────────────────────────
 
-export type { ResearchPaper, CMSStats } from './types';
+export type { ResearchPaper, CMSStats, BlogPost } from './types';
