@@ -6,7 +6,7 @@
  * is contained within this file. Swap this file to swap CMS.
  */
 
-import { CMSProvider, ResearchPaper, BlogPost } from "../types";
+import { CMSProvider, ResearchPaper, BlogPost, CadModel } from "../types";
 
 // ── Strapi-specific response types ──────────────────────────
 
@@ -45,6 +45,20 @@ interface StrapiBlogPost {
   category: string | null;
   is_featured: boolean | null;
   published_date: string | null;
+  publishedAt: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+interface StrapiCadModel {
+  id: number;
+  documentId: string;
+  title: string;
+  slug: string | null;
+  description: string | null;
+  thumbnail: StrapiMediaFile | null;
+  model_file: StrapiMediaFile | null;
+  category: string | null;
   publishedAt: string;
   createdAt: string;
   updatedAt: string;
@@ -134,6 +148,39 @@ export class StrapiProvider implements CMSProvider {
     }
   }
 
+  // ── CAD Models ──────────────────────────────────────────────
+
+  async getCadModels(): Promise<CadModel[]> {
+    try {
+      const url = new URL('/api/cad-models', this.baseUrl);
+      url.searchParams.set('populate', '*');
+      url.searchParams.set('pagination[pageSize]', '100');
+      url.searchParams.set('sort', 'createdAt:desc');
+
+      const json = await this.fetch<StrapiResponse<StrapiCadModel>>(url);
+      return json.data.map((item) => this.mapToCadModel(item));
+    } catch (error) {
+      console.error('[CMS:Strapi] Failed to fetch CAD models:', error);
+      return [];
+    }
+  }
+
+  async getCadModelBySlug(slug: string): Promise<CadModel | null> {
+    try {
+      const url = new URL('/api/cad-models', this.baseUrl);
+      url.searchParams.set('populate', '*');
+      url.searchParams.set('filters[slug][$eq]', slug);
+
+      const json = await this.fetch<StrapiResponse<StrapiCadModel>>(url);
+
+      if (json.data.length === 0) return null;
+      return this.mapToCadModel(json.data[0]);
+    } catch (error) {
+      console.error(`[CMS:Strapi] Failed to fetch CAD model "${slug}":`, error);
+      return null;
+    }
+  }
+
   // ── Shared fetch helper ─────────────────────────────────────
 
   private async fetch<T>(url: URL): Promise<T> {
@@ -185,6 +232,18 @@ export class StrapiProvider implements CMSProvider {
       category: item.category,
       isFeatured: item.is_featured ?? false,
       publishedAt: item.published_date || item.publishedAt,
+    };
+  }
+
+  private mapToCadModel(item: StrapiCadModel): CadModel {
+    return {
+      id: item.documentId || String(item.id),
+      slug: item.slug || item.documentId || String(item.id),
+      title: item.title || 'Untitled',
+      description: item.description,
+      thumbnailUrl: this.resolveMediaUrl(item.thumbnail),
+      modelFileUrl: this.resolveMediaUrl(item.model_file),
+      category: item.category,
     };
   }
 

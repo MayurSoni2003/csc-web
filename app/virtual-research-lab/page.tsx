@@ -1,6 +1,6 @@
 "use client";
 
-import "./virtual-research-lab.css";
+
 import HeroSection from "./components/HeroSection";
 import LabModules from "./components/LabModules";
 import DesignPipeline from "./components/DesignPipeline";

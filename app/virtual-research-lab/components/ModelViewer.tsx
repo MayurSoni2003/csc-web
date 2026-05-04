@@ -103,7 +103,7 @@ export default function ModelViewer() {
               <pointLight position={[5, 5, 5]} intensity={0.6} color="#00D4FF" />
               <pointLight position={[-5, -3, 5]} intensity={0.3} color="#7B61FF" />
               <EngineeringModel wireframe={wireframe} />
-              <OrbitControls enableDamping dampingFactor={0.05} />
+              <OrbitControls enableDamping={false} />
               <gridHelper args={[10, 20, "#1a3a5c", "#0a1929"]} />
             </Canvas>
             <div className="absolute bottom-4 left-4 glass-panel px-4 py-2 z-20">

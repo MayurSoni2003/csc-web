@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Link from "next/link";
 import HeroModel from "./HeroModel";
 import ParticleGrid from "./ParticleGrid";
 
@@ -38,7 +39,9 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <button className="btn-neon-solid">Explore Lab</button>
-            <button className="btn-neon">Upload Design</button>
+            <Link href="/virtual-research-lab/cad-repository">
+              <button className="btn-neon">CAD Repository</button>
+            </Link>
             <button className="btn-neon">View Research</button>
           </motion.div>
 

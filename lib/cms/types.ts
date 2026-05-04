@@ -90,6 +90,31 @@ export interface BlogPost {
   publishedAt: string | null;
 }
 
+// ── CAD Model ────────────────────────────────────────────────
+
+export interface CadModel {
+  /** Unique identifier (CMS-agnostic) */
+  id: string;
+
+  /** URL-friendly slug for routing */
+  slug: string;
+
+  /** Model display name */
+  title: string;
+
+  /** Brief description */
+  description: string | null;
+
+  /** Thumbnail image URL for gallery cards */
+  thumbnailUrl: string | null;
+
+  /** URL to the 3D model file (.glb / .gltf) */
+  modelFileUrl: string | null;
+
+  /** Category (Enumeration — e.g. "Robotics", "Aerospace") */
+  category: string | null;
+}
+
 // ── CMS Provider Interface ──────────────────────────────────
 
 export interface CMSProvider {
@@ -112,4 +137,17 @@ export interface CMSProvider {
    * Returns null if not found or on error.
    */
   getBlogPostBySlug(slug: string): Promise<BlogPost | null>;
+
+  /**
+   * Fetch all CAD models from the CMS.
+   * Implementations should handle errors gracefully and return
+   * an empty array on failure.
+   */
+  getCadModels(): Promise<CadModel[]>;
+
+  /**
+   * Fetch a single CAD model by its slug.
+   * Returns null if not found or on error.
+   */
+  getCadModelBySlug(slug: string): Promise<CadModel | null>;
 }

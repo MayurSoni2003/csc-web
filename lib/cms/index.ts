@@ -1,16 +1,4 @@
-/**
- * CMS Service — Public API
- *
- * This module is the single entry point for all CMS operations.
- * Pages and components import from here; they never touch providers directly.
- *
- * To add a new CMS provider:
- *   1. Create lib/cms/providers/<name>.ts implementing CMSProvider
- *   2. Add a case to createProvider() below
- *   3. Set CMS_PROVIDER=<name> in .env.local
- */
-
-import type { CMSProvider, ResearchPaper, CMSStats, BlogPost } from './types';
+import type { CMSProvider, ResearchPaper, CMSStats, BlogPost, CadModel } from './types';
 import { StrapiProvider } from './providers/strapi';
 
 // ── Factory ──────────────────────────────────────────────────
@@ -88,6 +76,17 @@ export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> 
   return cms.getBlogPostBySlug(slug);
 }
 
+// ── Public API — CAD Models ─────────────────────────────────
+
+export async function getCadModels(): Promise<CadModel[]> {
+  return cms.getCadModels();
+}
+
+export async function getCadModelBySlug(slug: string): Promise<CadModel | null> {
+  return cms.getCadModelBySlug(slug);
+}
+
 // ── Re-exports ───────────────────────────────────────────────
 
-export type { ResearchPaper, CMSStats, BlogPost } from './types';
+export type { ResearchPaper, CMSStats, BlogPost, CadModel } from './types';
+
