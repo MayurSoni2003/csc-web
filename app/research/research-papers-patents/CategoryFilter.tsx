@@ -68,7 +68,7 @@ export default function CategoryFilter({ papers, categories }: CategoryFilterPro
             </div>
           </FadeInUp>
         ) : (
-          <StaggerContainer className="space-y-6">
+          <StaggerContainer key={activeCategory} className="space-y-6">
             {filteredPapers.map((paper, index) => (
               <StaggerItem key={paper.id}>
                 <article className="bg-white rounded-[2rem] border border-black/5 p-8 md:p-10 shadow-[0_8px_30px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_60px_rgba(0,139,163,0.08)] transition-all duration-300 group">

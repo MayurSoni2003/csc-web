@@ -134,6 +134,182 @@ export default function CadCaePage() {
         </div>
       </section>
 
+      {/* ── 4. Design & Simulations Introduction ── */}
+      <section className="relative z-10 py-24 px-6 bg-white/50 backdrop-blur-md border-y border-black/5">
+        <div className="max-w-[1000px] mx-auto text-center">
+          <FadeInUp>
+            <h2 className="text-3xl md:text-4xl font-extrabold uppercase text-slate-900 tracking-tight mb-4">
+              Design <span className="text-[#008ba3]">&</span> Simulations
+            </h2>
+            <div className="w-20 h-1.5 bg-[#008ba3] mx-auto rounded-full mb-8"></div>
+            <p className="text-lg text-slate-600 font-medium leading-relaxed mb-6">
+              At Correct Steps Consultancy, we pride ourselves on being at the forefront of computational simulation innovation. Our track record of successfully tackling complex challenges, coupled with our commitment to excellence, sets us apart. With our expertise and forward-thinking approach, we offer you a competitive advantage, enabling you to push boundaries and achieve remarkable results.
+            </p>
+            <p className="text-base text-slate-500 leading-relaxed">
+              Take the leap into the future of simulations. Contact us today to discuss how we can transform your projects with our cutting-edge computational simulation solutions. Together, we will unlock new possibilities and drive unprecedented success. Eliminate apprehension about costs, openly discuss your budget, and achieve outcomes on par with our consultancy through transparent pricing and tailored solutions.
+            </p>
+          </FadeInUp>
+        </div>
+      </section>
+
+      {/* ── 5. Project Portfolio ── */}
+      <section className="relative z-10 py-24 px-6">
+        <div className="max-w-[1200px] mx-auto">
+          <FadeInUp className="text-center mb-20">
+            <h2 className="text-3xl md:text-4xl font-extrabold uppercase text-slate-900 tracking-tight mb-4">
+              Our <span className="text-[#008ba3]">Project Portfolio</span>
+            </h2>
+            <div className="w-20 h-1.5 bg-[#008ba3] mx-auto rounded-full"></div>
+          </FadeInUp>
+
+          <div className="flex flex-col gap-24">
+            {/* ─ Case Study 1 ─ */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <SlideInLeft>
+                <div className="aspect-video rounded-[2rem] bg-gradient-to-br from-slate-100 to-slate-200 border border-black/5 shadow-sm flex items-center justify-center overflow-hidden">
+                  {/* Replace with GIF: Mesh Convergence */}
+                  <span className="text-sm text-slate-400 font-medium tracking-wider uppercase">GIF Placeholder — Mesh Convergence</span>
+                </div>
+              </SlideInLeft>
+              <SlideInRight>
+                <span className="inline-block px-3 py-1 rounded-full bg-[#008ba3]/10 text-[#008ba3] text-xs font-bold tracking-widest uppercase mb-4">01</span>
+                <h3 className="text-2xl font-extrabold text-slate-900 mb-4">Study of Mesh Convergence Theory with the Aim of Correlating Automobile Frontal Impact</h3>
+                <p className="text-slate-600 leading-relaxed font-medium mb-6">Achieve accurate simulations, optimize costs, and gain a competitive edge. Our mesh convergence study provides trustworthy outcomes, efficient resource allocation, tailored insights, and expert collaboration. Request our white paper report for comprehensive details.</p>
+                <div className="flex flex-wrap gap-2">
+                  {['Enhanced Accuracy', 'Cost Optimization', 'Improved Performance', 'Actionable Recommendations', 'Expertise and Collaboration'].map(b => (
+                    <span key={b} className="px-3 py-1.5 rounded-full bg-white border border-[#008ba3]/20 text-xs font-bold text-[#008ba3] shadow-sm">{b}</span>
+                  ))}
+                </div>
+              </SlideInRight>
+            </div>
+
+            {/* ─ Case Study 2 ─ */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <SlideInLeft className="order-2 lg:order-1">
+                <span className="inline-block px-3 py-1 rounded-full bg-[#008ba3]/10 text-[#008ba3] text-xs font-bold tracking-widest uppercase mb-4">02</span>
+                <h3 className="text-2xl font-extrabold text-slate-900 mb-4">Rear Underrun Protection Device</h3>
+                <p className="text-slate-600 leading-relaxed font-medium mb-6">Save costs and time while ensuring safety with our computational simulation for Rear Underrun Protection Devices (RUPDs). By eliminating the need for extensive physical testing, our efficient design iterations accelerate time-to-market and deliver reliable safety assurance.</p>
+                <div className="flex flex-wrap gap-2">
+                  {['Substantial Cost Savings', 'Efficient Design Iterations', 'Reduced Physical Testing Expenses', 'Accelerated Time-to-Market', 'Enhanced Safety Assurance'].map(b => (
+                    <span key={b} className="px-3 py-1.5 rounded-full bg-white border border-[#008ba3]/20 text-xs font-bold text-[#008ba3] shadow-sm">{b}</span>
+                  ))}
+                </div>
+              </SlideInLeft>
+              <SlideInRight className="order-1 lg:order-2">
+                <div className="aspect-video rounded-[2rem] bg-gradient-to-br from-slate-100 to-slate-200 border border-black/5 shadow-sm flex items-center justify-center overflow-hidden">
+                  <span className="text-sm text-slate-400 font-medium tracking-wider uppercase">GIF Placeholder — RUPD</span>
+                </div>
+              </SlideInRight>
+            </div>
+
+            {/* ─ Case Study 3 ─ */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <SlideInLeft>
+                <div className="aspect-video rounded-[2rem] bg-gradient-to-br from-slate-100 to-slate-200 border border-black/5 shadow-sm flex items-center justify-center overflow-hidden">
+                  <span className="text-sm text-slate-400 font-medium tracking-wider uppercase">GIF Placeholder — Wheel Impact</span>
+                </div>
+              </SlideInLeft>
+              <SlideInRight>
+                <span className="inline-block px-3 py-1 rounded-full bg-[#008ba3]/10 text-[#008ba3] text-xs font-bold tracking-widest uppercase mb-4">03</span>
+                <h3 className="text-2xl font-extrabold text-slate-900 mb-4">Wheel Impact Test</h3>
+                <p className="text-slate-600 leading-relaxed font-medium mb-6">Revolutionize your wheel impact testing process with our advanced computational simulation solutions. Experience precise impact analysis, significant cost savings, optimized designs, accelerated time-to-market, and enhanced performance assurance.</p>
+                <div className="flex flex-wrap gap-2">
+                  {['Accurate Impact Analysis', 'Cost-Efficient Testing', 'Design Optimization', 'Faster Time-to-Market', 'Enhanced Performance Assurance'].map(b => (
+                    <span key={b} className="px-3 py-1.5 rounded-full bg-white border border-[#008ba3]/20 text-xs font-bold text-[#008ba3] shadow-sm">{b}</span>
+                  ))}
+                </div>
+              </SlideInRight>
+            </div>
+
+            {/* ─ Case Study 4 ─ */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <SlideInLeft className="order-2 lg:order-1">
+                <span className="inline-block px-3 py-1 rounded-full bg-[#008ba3]/10 text-[#008ba3] text-xs font-bold tracking-widest uppercase mb-4">04</span>
+                <h3 className="text-2xl font-extrabold text-slate-900 mb-4">Prosthesis Upper Limb Analysis</h3>
+                <p className="text-slate-600 leading-relaxed font-medium mb-6">Experience the power of computational simulation for comprehensive prosthesis analysis. With proven success in upper limb projects, we deliver precise evaluation, cost-efficiency, tailored design optimization, accelerated development, and enhanced user experience.</p>
+                <div className="flex flex-wrap gap-2">
+                  {['Precise Evaluation', 'Cost-Efficiency', 'Tailored Design Optimization', 'Accelerated Development', 'Enhanced User Experience'].map(b => (
+                    <span key={b} className="px-3 py-1.5 rounded-full bg-white border border-[#008ba3]/20 text-xs font-bold text-[#008ba3] shadow-sm">{b}</span>
+                  ))}
+                </div>
+              </SlideInLeft>
+              <SlideInRight className="order-1 lg:order-2">
+                <div className="aspect-video rounded-[2rem] bg-gradient-to-br from-slate-100 to-slate-200 border border-black/5 shadow-sm flex items-center justify-center overflow-hidden">
+                  <span className="text-sm text-slate-400 font-medium tracking-wider uppercase">GIF Placeholder — Prosthesis</span>
+                </div>
+              </SlideInRight>
+            </div>
+
+            {/* ─ Case Study 5 ─ */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <SlideInLeft>
+                <div className="aspect-video rounded-[2rem] bg-gradient-to-br from-slate-100 to-slate-200 border border-black/5 shadow-sm flex items-center justify-center overflow-hidden">
+                  <span className="text-sm text-slate-400 font-medium tracking-wider uppercase">GIF Placeholder — Quadcopter</span>
+                </div>
+              </SlideInLeft>
+              <SlideInRight>
+                <span className="inline-block px-3 py-1 rounded-full bg-[#008ba3]/10 text-[#008ba3] text-xs font-bold tracking-widest uppercase mb-4">05</span>
+                <h3 className="text-2xl font-extrabold text-slate-900 mb-4">Vibrational Analysis of Quadcopter</h3>
+                <p className="text-slate-600 leading-relaxed font-medium mb-6">Harness the capabilities of advanced computational simulation for precise vibrational analysis of quadcopters. Our solutions offer accurate vibration assessment, cost-efficient analysis, optimized design, enhanced performance, and faster development.</p>
+                <div className="flex flex-wrap gap-2">
+                  {['Accurate Vibration Assessment', 'Cost-Efficient Analysis', 'Optimized Design', 'Enhanced Performance', 'Faster Development'].map(b => (
+                    <span key={b} className="px-3 py-1.5 rounded-full bg-white border border-[#008ba3]/20 text-xs font-bold text-[#008ba3] shadow-sm">{b}</span>
+                  ))}
+                </div>
+              </SlideInRight>
+            </div>
+
+            {/* ─ Case Study 6 ─ */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <SlideInLeft className="order-2 lg:order-1">
+                <span className="inline-block px-3 py-1 rounded-full bg-[#008ba3]/10 text-[#008ba3] text-xs font-bold tracking-widest uppercase mb-4">06</span>
+                <h3 className="text-2xl font-extrabold text-slate-900 mb-4">Design Optimization of FSAE Upright</h3>
+                <p className="text-slate-600 leading-relaxed font-medium mb-6">Maximize the performance of your FSAE Upright through advanced computational simulation. Our solutions deliver optimal design solutions, cost-efficient analysis, enhanced performance, faster development, and a competitive advantage.</p>
+                <div className="flex flex-wrap gap-2">
+                  {['Optimal Design Solutions', 'Cost-Efficient Analysis', 'Enhanced Performance', 'Faster Development', 'Competitive Advantage'].map(b => (
+                    <span key={b} className="px-3 py-1.5 rounded-full bg-white border border-[#008ba3]/20 text-xs font-bold text-[#008ba3] shadow-sm">{b}</span>
+                  ))}
+                </div>
+              </SlideInLeft>
+              <SlideInRight className="order-1 lg:order-2">
+                <div className="aspect-video rounded-[2rem] bg-gradient-to-br from-slate-100 to-slate-200 border border-black/5 shadow-sm flex items-center justify-center overflow-hidden">
+                  <span className="text-sm text-slate-400 font-medium tracking-wider uppercase">GIF Placeholder — FSAE Upright</span>
+                </div>
+              </SlideInRight>
+            </div>
+
+            {/* ─ Case Study 7 ─ */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <SlideInLeft>
+                <div className="aspect-video rounded-[2rem] bg-gradient-to-br from-slate-100 to-slate-200 border border-black/5 shadow-sm flex items-center justify-center overflow-hidden">
+                  <span className="text-sm text-slate-400 font-medium tracking-wider uppercase">GIF Placeholder — Seating System</span>
+                </div>
+              </SlideInLeft>
+              <SlideInRight>
+                <span className="inline-block px-3 py-1 rounded-full bg-[#008ba3]/10 text-[#008ba3] text-xs font-bold tracking-widest uppercase mb-4">07</span>
+                <h3 className="text-2xl font-extrabold text-slate-900 mb-4">Seating System and Luggage Retention</h3>
+                <p className="text-slate-600 leading-relaxed font-medium mb-6">Elevate your seating system and luggage retention capabilities through advanced computational simulation. Our solutions offer optimized seating design, secure luggage retention, cost-efficient analysis, enhanced safety, and streamlined development.</p>
+                <div className="flex flex-wrap gap-2">
+                  {['Optimized Seating Design', 'Secure Luggage Retention', 'Cost-Efficient Analysis', 'Enhanced Safety', 'Streamlined Development'].map(b => (
+                    <span key={b} className="px-3 py-1.5 rounded-full bg-white border border-[#008ba3]/20 text-xs font-bold text-[#008ba3] shadow-sm">{b}</span>
+                  ))}
+                </div>
+              </SlideInRight>
+            </div>
+          </div>
+
+          {/* CTA */}
+          <FadeInUp className="text-center mt-24">
+            <p className="text-lg text-slate-600 font-medium mb-8 max-w-2xl mx-auto">
+              Contact us today for the best pricing & relieving the burden of pricing concerns.
+            </p>
+            <Link href="/contact-us" className="bg-[#008ba3] text-white px-10 py-4 font-bold rounded-full uppercase tracking-widest hover:shadow-[0_10px_30px_rgba(0,188,212,0.3)] hover:-translate-y-1 transition-all duration-300">
+              Get in Touch
+            </Link>
+          </FadeInUp>
+        </div>
+      </section>
+
     </div>
   );
 }
